@@ -1,0 +1,25 @@
+project:
+  type: website
+  output-dir: dist
+
+website:
+  title: "GAP Med Insights"
+  favicon: assets/favicon.png
+  navbar:
+    logo: assets/logo.png
+    left:
+      - text: "Pletora Medica 2025"
+        href: analisi/pletora-medica-2025.qmd
+  page-footer:
+    center: "© 2025 GAP Med Insights. Tutti i diritti riservati."
+
+format:
+  html:
+    theme:
+      light: flatly
+    css: custom-style.css
+    toc: true
+    toc-location: right
+    page-layout: full
+    grid:
+      body-width: 1200px

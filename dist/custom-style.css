@@ -1,0 +1,164 @@
+/* Custom styles for GAP Med Insights - Quarto */
+/* Colori Gapmed: Blu #3973b9, Rosa #e83977 */
+
+/* Link colors */
+a {
+  color: #3973b9;
+}
+
+a:hover {
+  color: #e83977;
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.card-grid.cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card-grid.cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Card styling */
+.card {
+  background: var(--bs-body-bg, #fff);
+  border: 1px solid var(--bs-border-color, #dee2e6);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border-top: 3px solid #3973b9;
+}
+
+.card.highlight {
+  border: 2px solid #f59e0b;
+  border-top: 3px solid #f59e0b;
+}
+
+.card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: var(--bs-body-color);
+}
+
+.card .muted {
+  color: #6c757d;
+  font-weight: normal;
+}
+
+/* Big numbers */
+.big {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.small {
+  font-size: 0.875rem;
+  margin: 0.25rem 0;
+}
+
+/* Hero box */
+.hero-box {
+  background: linear-gradient(135deg, #3973b9 0%, #2d5a91 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.hero-box h2 {
+  color: white;
+  margin: 0 0 1rem 0;
+}
+
+.hero-box p {
+  margin: 0;
+}
+
+/* Callouts custom */
+.callout-tip,
+.callout-note,
+.callout-warning {
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  border-left: 4px solid;
+}
+
+.callout-tip {
+  background: #d1fae5;
+  border-left-color: #10b981;
+}
+
+.callout-note {
+  background: #dbeafe;
+  border-left-color: #3973b9;
+}
+
+.callout-warning {
+  background: #fef3c7;
+  border-left-color: #f59e0b;
+}
+
+/* Navbar styling */
+.navbar {
+  border-bottom: 2px solid #3973b9;
+}
+
+/* Responsive grid */
+@media (max-width: 900px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card-grid.cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .card-grid,
+  .card-grid.cols-3,
+  .card-grid.cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .big {
+    font-size: 1.5rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .navbar,
+  #quarto-sidebar,
+  .sidebar-tools,
+  #TOC {
+    display: none !important;
+  }
+
+  main {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .card, .hero-box {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .hero-box {
+    background: #f0f0f0 !important;
+    color: #333 !important;
+    border: 2px solid #3973b9;
+  }
+
+  .hero-box h2 {
+    color: #333 !important;
+  }
+}

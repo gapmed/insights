@@ -1,0 +1,649 @@
+---
+title: "Pletora Medica 2025"
+subtitle: "Analisi dell'evoluzione del numero di medici in Italia (2019-2040)"
+author: "GAP Med Insights"
+date: today
+format:
+  html:
+    toc: true
+    toc-location: right
+    code-fold: true
+    code-tools: false
+---
+
+```{ojs}
+//| echo: false
+html`<button onclick="window.print()" style="background: #e83977; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; font-size: 0.85rem; float: right;">📄 Esporta PDF</button>`
+```
+
+```{ojs}
+//| echo: false
+html`<div class="hero-box">
+  <h2 style="color: white; margin: 0;">La domanda chiave</h2>
+  <p style="font-size: 1.2em; margin: 1rem 0 0 0;">
+    L'Italia avrà troppi medici nei prossimi anni? O il sistema sanitario ne avrà comunque bisogno?
+  </p>
+</div>`
+```
+
+Questa analisi simula l'evoluzione del numero di medici in Italia dal **2019 al 2040**, considerando:
+
+- **Formazione**: effetti del semestre filtro e dell'aumento dei posti a Medicina
+- **Migrazione**: flussi di emigrazione e immigrazione dei medici
+- **Demografia**: invecchiamento della popolazione e impatto sul carico del SSN
+
+```{ojs}
+//| echo: false
+// Caricamento dati
+analisi = FileAttachment("../data/pletora/Analisi Pletora - Analisi.csv").csv()
+andamento = FileAttachment("../data/pletora/Analisi Pletora - Andamento.csv").csv()
+carico = FileAttachment("../data/pletora/Analisi Pletora - Carico su SSN.csv").csv()
+ssn = FileAttachment("../data/pletora/Analisi Pletora - SSN.csv").csv()
+```
+
+```{ojs}
+//| echo: false
+// Funzioni di parsing e utility
+anni = {
+  const arr = [];
+  for (let y = 2019; y <= 2040; y++) arr.push(y);
+  return arr;
+}
+
+function parseNumber(str) {
+  if (!str) return 0;
+  return parseFloat(str.replace(/,/g, "").replace(/%/g, ""));
+}
+
+function fmt(n) {
+  return n.toLocaleString("it-IT");
+}
+
+// Estrai serie temporali dall'analisi
+totaliMedici = anni.map((anno, i) => ({
+  anno,
+  totale: parseNumber(analisi[0][anno]),
+  attivi: parseNumber(analisi[1][anno]),
+  nonPensionati: parseNumber(analisi[2][anno])
+}))
+
+// Fasce età medici (valori assoluti)
+fasceEta = anni.map(anno => ({
+  anno,
+  "25-35": parseNumber(analisi[4][anno]),
+  "36-45": parseNumber(analisi[5][anno]),
+  "46-55": parseNumber(analisi[6][anno]),
+  "56-67": parseNumber(analisi[7][anno])
+}))
+
+// Fasce età medici (percentuali)
+fasceEtaPerc = anni.map(anno => ({
+  anno,
+  "25-35": parseNumber(analisi[9][anno]),
+  "36-45": parseNumber(analisi[10][anno]),
+  "46-55": parseNumber(analisi[11][anno]),
+  "56-67": parseNumber(analisi[12][anno])
+}))
+```
+
+---
+
+## L'evoluzione del numero di medici attivi
+
+I **medici attivi** sono coloro che effettivamente esercitano la professione: include i non pensionati e circa il 30% dei pensionati che continuano a lavorare fino ai 72 anni.
+
+```{ojs}
+//| echo: false
+mediciAttivi = ssn.map(d => ({
+  anno: parseInt(d.Anno),
+  attivi: parseNumber(d["Medici Attivi"])
+}))
+```
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  title: "Evoluzione del numero di medici attivi in Italia (2019-2040)",
+  width: width,
+  height: 400,
+  y: {
+    label: "Medici attivi",
+    grid: true,
+    domain: [350000, 600000],
+    tickFormat: d => Math.round(d / 1000) + "k"
+  },
+  x: {
+    label: "Anno",
+    tickFormat: d => String(d)
+  },
+  marks: [
+    Plot.ruleX([2025], {stroke: "#f59e0b", strokeWidth: 2, strokeDasharray: "4,4"}),
+    Plot.text([{anno: 2025}], {x: "anno", y: 600000, text: "2025", fill: "#f59e0b", fontWeight: "bold", dy: -5}),
+    Plot.line(mediciAttivi, {x: "anno", y: "attivi", stroke: "#3973b9", strokeWidth: 3}),
+    Plot.dot(mediciAttivi, {x: "anno", y: "attivi", fill: "#3973b9", r: 5, tip: true})
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+att2019 = mediciAttivi.find(d => d.anno === 2019)
+att2025 = mediciAttivi.find(d => d.anno === 2025)
+att2030 = mediciAttivi.find(d => d.anno === 2030)
+att2040 = mediciAttivi.find(d => d.anno === 2040)
+crescitaAtt2025 = ((att2025.attivi - att2019.attivi) / att2019.attivi * 100).toFixed(1)
+crescitaAtt2030 = ((att2030.attivi - att2025.attivi) / att2025.attivi * 100).toFixed(1)
+crescitaAtt2040 = ((att2040.attivi - att2025.attivi) / att2025.attivi * 100).toFixed(1)
+```
+
+```{ojs}
+//| echo: false
+html`<div class="card-grid">
+  <div class="card">
+    <h3>2019 <span class="muted">(passato)</span></h3>
+    <p class="big">${fmt(att2019.attivi)}</p>
+  </div>
+  <div class="card highlight">
+    <h3 style="color: #f59e0b;">2025 <span class="muted">(oggi)</span></h3>
+    <p class="big">${fmt(att2025.attivi)}</p>
+    <p class="small muted">${crescitaAtt2025}% dal 2019</p>
+  </div>
+  <div class="card">
+    <h3>2030</h3>
+    <p class="big">${fmt(att2030.attivi)}</p>
+    <p class="small muted">+${crescitaAtt2030}% dal 2025</p>
+  </div>
+  <div class="card">
+    <h3>2040</h3>
+    <p class="big">${fmt(att2040.attivi)}</p>
+    <p class="small muted">+${crescitaAtt2040}% dal 2025</p>
+  </div>
+</div>`
+```
+
+```{ojs}
+//| echo: false
+html`<div class="callout-tip">
+  <strong>Cosa emerge:</strong> Dal 2019 al 2025 i medici attivi sono calati del ${Math.abs(parseFloat(crescitaAtt2025)).toFixed(1)}% per effetto dei pensionamenti. Dal 2025 inizia la ripresa: +${crescitaAtt2030}% entro il 2030 e +${crescitaAtt2040}% entro il 2040, grazie all'aumento dei posti in Medicina.
+</div>`
+```
+
+---
+
+### Esplora i dati per anno
+
+```{ojs}
+//| echo: false
+viewof annoSelezionato = Inputs.range([2019, 2040], {step: 1, value: 2025, label: "Anno"})
+```
+
+```{ojs}
+//| echo: false
+datoAnno = totaliMedici.find(d => d.anno === annoSelezionato)
+```
+
+```{ojs}
+//| echo: false
+html`<div class="card-grid cols-3">
+  <div class="card">
+    <h3>Medici totali</h3>
+    <p class="big">${fmt(datoAnno.totale)}</p>
+  </div>
+  <div class="card">
+    <h3>Medici attivi</h3>
+    <p class="big">${fmt(datoAnno.attivi)}</p>
+  </div>
+  <div class="card">
+    <h3>Non pensionati</h3>
+    <p class="big">${fmt(datoAnno.nonPensionati)}</p>
+  </div>
+</div>`
+```
+
+---
+
+## Il cambio generazionale
+
+Il dato più rilevante non è solo il numero totale, ma **chi** saranno questi medici.
+
+```{ojs}
+//| echo: false
+datiFasceEtaAssoluti = fasceEta.flatMap(d => [
+  {anno: d.anno, fascia: "25-35 (giovani)", valore: d["25-35"]},
+  {anno: d.anno, fascia: "36-55 (medi)", valore: d["36-45"] + d["46-55"]},
+  {anno: d.anno, fascia: "56-67 (esperti)", valore: d["56-67"]}
+])
+```
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  title: "Andamento medici per fascia d'età (2019-2040)",
+  width: width,
+  height: 400,
+  y: {label: "Numero medici", grid: true, tickFormat: d => Math.round(d / 1000) + "k"},
+  x: {label: "Anno", tickFormat: d => String(d)},
+  color: {legend: true, domain: ["25-35 (giovani)", "36-55 (medi)", "56-67 (esperti)"], range: ["#3973b9", "#6c757d", "#e83977"]},
+  marks: [
+    Plot.ruleX([2025], {stroke: "#f59e0b", strokeWidth: 2, strokeDasharray: "4,4"}),
+    Plot.line(datiFasceEtaAssoluti, {x: "anno", y: "valore", stroke: "fascia", strokeWidth: 3}),
+    Plot.dot(datiFasceEtaAssoluti, {x: "anno", y: "valore", fill: "fascia", r: 5, tip: true})
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+datiFasceEta = fasceEtaPerc.flatMap(d => [
+  {anno: d.anno, fascia: "25-35 (giovani)", percentuale: d["25-35"]},
+  {anno: d.anno, fascia: "36-45", percentuale: d["36-45"]},
+  {anno: d.anno, fascia: "46-55", percentuale: d["46-55"]},
+  {anno: d.anno, fascia: "56-67 (esperti)", percentuale: d["56-67"]}
+])
+```
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  title: "Distribuzione per età dei medici (%)",
+  width: width,
+  height: 400,
+  y: {label: "Percentuale", grid: true, domain: [0, 50], tickFormat: d => d + "%"},
+  x: {label: "Anno", tickFormat: d => String(d)},
+  color: {legend: true, domain: ["25-35 (giovani)", "36-45", "46-55", "56-67 (esperti)"], range: ["#3973b9", "#5a9bd5", "#a5c8e4", "#e83977"]},
+  marks: [
+    Plot.ruleX([2025], {stroke: "#f59e0b", strokeWidth: 2, strokeDasharray: "4,4"}),
+    Plot.line(datiFasceEta, {x: "anno", y: "percentuale", stroke: "fascia", strokeWidth: 2.5}),
+    Plot.dot(datiFasceEta, {x: "anno", y: "percentuale", fill: "fascia", r: 4, tip: true})
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+fascia2019 = fasceEtaPerc.find(d => d.anno === 2019)
+fascia2025 = fasceEtaPerc.find(d => d.anno === 2025)
+fascia2030 = fasceEtaPerc.find(d => d.anno === 2030)
+fascia2040 = fasceEtaPerc.find(d => d.anno === 2040)
+```
+
+```{ojs}
+//| echo: false
+html`<div class="card-grid">
+  <div class="card">
+    <h3>2019</h3>
+    <p class="small"><strong style="color: #3973b9;">Giovani:</strong> ${fascia2019["25-35"].toFixed(1)}%</p>
+    <p class="small"><strong style="color: #e83977;">Esperti:</strong> ${fascia2019["56-67"].toFixed(1)}%</p>
+  </div>
+  <div class="card highlight">
+    <h3 style="color: #f59e0b;">2025</h3>
+    <p class="small"><strong style="color: #3973b9;">Giovani:</strong> ${fascia2025["25-35"].toFixed(1)}%</p>
+    <p class="small"><strong style="color: #e83977;">Esperti:</strong> ${fascia2025["56-67"].toFixed(1)}%</p>
+  </div>
+  <div class="card">
+    <h3>2030</h3>
+    <p class="small"><strong style="color: #3973b9;">Giovani:</strong> ${fascia2030["25-35"].toFixed(1)}%</p>
+    <p class="small"><strong style="color: #e83977;">Esperti:</strong> ${fascia2030["56-67"].toFixed(1)}%</p>
+  </div>
+  <div class="card">
+    <h3>2040</h3>
+    <p class="small"><strong style="color: #3973b9;">Giovani:</strong> ${fascia2040["25-35"].toFixed(1)}%</p>
+    <p class="small"><strong style="color: #e83977;">Esperti:</strong> ${fascia2040["56-67"].toFixed(1)}%</p>
+  </div>
+</div>`
+```
+
+```{ojs}
+//| echo: false
+html`<div class="callout-warning">
+  <strong>Il cambio generazionale:</strong> Oggi (2025) i giovani sono il ${fascia2025["25-35"].toFixed(0)}% e gli esperti il ${fascia2025["56-67"].toFixed(0)}%. Nel 2030 si invertirà la tendenza: giovani al ${fascia2030["25-35"].toFixed(0)}%, esperti al ${fascia2030["56-67"].toFixed(0)}%. Nel 2040 i giovani saranno il ${fascia2040["25-35"].toFixed(0)}% del totale.
+</div>`
+```
+
+---
+
+## Il carico sul Sistema Sanitario
+
+Ma l'Italia ha davvero bisogno di meno medici? La risposta dipende da **chi** deve essere curato.
+
+La popolazione italiana sta invecchiando rapidamente. Un anziano over 85 richiede circa **5.5 volte** più risorse sanitarie di un adulto sano. Per questo abbiamo calcolato il "carico equivalente" sul SSN.
+
+```{ojs}
+//| echo: false
+caricoNorm = carico.filter(d => {
+  const anno = parseInt(d.Anno);
+  return anno >= 2019 && anno <= 2040;
+}).map(d => ({
+  anno: parseInt(d.Anno),
+  normalizzato: parseFloat(d["Normalizzato 2019"])
+}))
+```
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  title: "Carico SSN normalizzato (2019 = 1.0)",
+  width: width,
+  height: 300,
+  y: {label: "Indice carico", grid: true, domain: [0.98, 1.25]},
+  x: {label: "Anno", tickFormat: d => d.toString()},
+  marks: [
+    Plot.ruleX([2025], {stroke: "#f59e0b", strokeWidth: 2, strokeDasharray: "4,4"}),
+    Plot.line(caricoNorm, {x: "anno", y: "normalizzato", stroke: "#e83977", strokeWidth: 3}),
+    Plot.dot(caricoNorm, {x: "anno", y: "normalizzato", fill: "#e83977", r: 5, tip: true}),
+    Plot.ruleY([1], {stroke: "#ccc", strokeDasharray: "4,4"})
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+carico2019n = caricoNorm.find(d => d.anno === 2019)
+carico2025n = caricoNorm.find(d => d.anno === 2025)
+carico2030n = caricoNorm.find(d => d.anno === 2030)
+carico2040n = caricoNorm.find(d => d.anno === 2040)
+```
+
+```{ojs}
+//| echo: false
+html`<div class="card-grid">
+  <div class="card">
+    <h3>2019</h3>
+    <p class="big">1.00</p>
+    <p class="small muted">Base di riferimento</p>
+  </div>
+  <div class="card highlight">
+    <h3 style="color: #f59e0b;">2025</h3>
+    <p class="big">${carico2025n.normalizzato.toFixed(2)}</p>
+    <p class="small muted">+${((carico2025n.normalizzato - 1) * 100).toFixed(0)}% dal 2019</p>
+  </div>
+  <div class="card">
+    <h3>2030</h3>
+    <p class="big">${carico2030n.normalizzato.toFixed(2)}</p>
+    <p class="small muted">+${((carico2030n.normalizzato - 1) * 100).toFixed(0)}% dal 2019</p>
+  </div>
+  <div class="card">
+    <h3>2040</h3>
+    <p class="big" style="color: #e83977;">${carico2040n.normalizzato.toFixed(2)}</p>
+    <p class="small muted">+${((carico2040n.normalizzato - 1) * 100).toFixed(0)}% dal 2019</p>
+  </div>
+</div>`
+```
+
+```{ojs}
+//| echo: false
+html`<div class="callout-note">
+  <strong>Cosa significa:</strong> L'invecchiamento della popolazione aumenta costantemente il carico sul SSN. Oggi (2025) è già +${((carico2025n.normalizzato - 1) * 100).toFixed(0)}% rispetto al 2019, e nel 2040 raggiungerà +${((carico2040n.normalizzato - 1) * 100).toFixed(0)}%.
+</div>`
+```
+
+---
+
+## Il rapporto medici/carico
+
+Ecco il dato chiave: **quanti pazienti equivalenti** deve gestire ogni medico attivo?
+
+```{ojs}
+//| echo: false
+caricoPerMedico = ssn.map(d => ({
+  anno: parseInt(d.Anno),
+  carico: parseInt(d["Carico SSN"])
+}))
+```
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  title: "Carico SSN per medico attivo",
+  subtitle: "Pazienti equivalenti per medico",
+  width: width,
+  height: 350,
+  y: {label: "Carico per medico", grid: true, domain: [160, 240]},
+  x: {label: "Anno", tickFormat: d => d.toString()},
+  marks: [
+    Plot.ruleX([2025], {stroke: "#f59e0b", strokeWidth: 2, strokeDasharray: "4,4"}),
+    Plot.line(caricoPerMedico, {x: "anno", y: "carico", stroke: "#3973b9", strokeWidth: 3}),
+    Plot.dot(caricoPerMedico, {x: "anno", y: "carico", fill: "#3973b9", r: 5, tip: true})
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+car2019 = caricoPerMedico.find(d => d.anno === 2019).carico
+car2025 = caricoPerMedico.find(d => d.anno === 2025).carico
+car2030 = caricoPerMedico.find(d => d.anno === 2030).carico
+car2040 = caricoPerMedico.find(d => d.anno === 2040).carico
+varCar2025 = ((car2025 - car2019) / car2019 * 100).toFixed(1)
+varCar2040 = ((car2040 - car2025) / car2025 * 100).toFixed(1)
+```
+
+```{ojs}
+//| echo: false
+html`<div class="card-grid">
+  <div class="card">
+    <h3>2019</h3>
+    <p class="big">${car2019}</p>
+    <p class="small muted">pazienti eq./medico</p>
+  </div>
+  <div class="card highlight">
+    <h3 style="color: #f59e0b;">2025</h3>
+    <p class="big">${car2025}</p>
+    <p class="small muted">+${varCar2025}% dal 2019</p>
+  </div>
+  <div class="card">
+    <h3>2030</h3>
+    <p class="big">${car2030}</p>
+  </div>
+  <div class="card">
+    <h3>2040</h3>
+    <p class="big" style="color: #3973b9;">${car2040}</p>
+    <p class="small muted">${varCar2040}% dal 2025</p>
+  </div>
+</div>`
+```
+
+```{ojs}
+//| echo: false
+html`<div class="hero-box">
+  <h2 style="color: white;">Il verdetto</h2>
+  <p style="font-size: 1.1em;">
+    Oggi (2025) ogni medico gestisce <strong>${car2025}</strong> pazienti equivalenti, contro i ${car2019} del 2019 (+${varCar2025}%).
+  </p>
+  <p style="font-size: 1.1em; margin-top: 0.5rem;">
+    Nel 2040 il carico scenderà a <strong>${car2040}</strong> (${varCar2040}% dal 2025), grazie all'aumento dei medici.
+  </p>
+  <p style="font-size: 1.1em; margin-top: 1rem;">
+    <strong>Non c'è pletora.</strong> L'aumento dei medici è proporzionato all'aumento del carico sul SSN dovuto all'invecchiamento della popolazione.
+  </p>
+</div>`
+```
+
+---
+
+## Medici per 1000 abitanti
+
+Quanti medici attivi ci sono per ogni 1000 abitanti? E per ogni 1000 anziani?
+
+```{ojs}
+//| echo: false
+mediciPerAbitante = ssn.map(d => ({
+  anno: parseInt(d.Anno),
+  per1000: parseFloat(d["Medici/1000 Abitanti"]),
+  per1000over65: parseFloat(d["Medici/1000 Abitanti 65+"]),
+  per1000over75: parseFloat(d["Medici/1000  Abitanti 75+"])
+}))
+```
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  title: "Medici attivi per 1000 abitanti",
+  width: width,
+  height: 350,
+  y: {label: "Medici / 1000 abitanti", grid: true, domain: [6, 11]},
+  x: {label: "Anno", tickFormat: d => d.toString()},
+  marks: [
+    Plot.ruleX([2025], {stroke: "#f59e0b", strokeWidth: 2, strokeDasharray: "4,4"}),
+    Plot.line(mediciPerAbitante, {x: "anno", y: "per1000", stroke: "#3973b9", strokeWidth: 3}),
+    Plot.dot(mediciPerAbitante, {x: "anno", y: "per1000", fill: "#3973b9", r: 5, tip: true})
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+mpa2019 = mediciPerAbitante.find(d => d.anno === 2019)
+mpa2025 = mediciPerAbitante.find(d => d.anno === 2025)
+mpa2030 = mediciPerAbitante.find(d => d.anno === 2030)
+mpa2040 = mediciPerAbitante.find(d => d.anno === 2040)
+```
+
+```{ojs}
+//| echo: false
+html`<div class="card-grid">
+  <div class="card"><h3>2019</h3><p class="big">${mpa2019.per1000.toFixed(2)}</p></div>
+  <div class="card highlight"><h3 style="color: #f59e0b;">2025</h3><p class="big">${mpa2025.per1000.toFixed(2)}</p></div>
+  <div class="card"><h3>2030</h3><p class="big">${mpa2030.per1000.toFixed(2)}</p></div>
+  <div class="card"><h3>2040</h3><p class="big" style="color: #3973b9;">${mpa2040.per1000.toFixed(2)}</p></div>
+</div>`
+```
+
+---
+
+## Medici per anziani over 65 e over 75
+
+```{ojs}
+//| echo: false
+datiAnziani = mediciPerAbitante.flatMap(d => [
+  {anno: d.anno, categoria: "Over 65", valore: d.per1000over65},
+  {anno: d.anno, categoria: "Over 75", valore: d.per1000over75}
+])
+```
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  title: "Medici attivi per 1000 anziani",
+  width: width,
+  height: 350,
+  y: {label: "Medici / 1000 anziani", grid: true, domain: [20, 65]},
+  x: {label: "Anno", tickFormat: d => d.toString()},
+  color: {legend: true, domain: ["Over 65", "Over 75"], range: ["#3973b9", "#e83977"]},
+  marks: [
+    Plot.ruleX([2025], {stroke: "#f59e0b", strokeWidth: 2, strokeDasharray: "4,4"}),
+    Plot.line(datiAnziani, {x: "anno", y: "valore", stroke: "categoria", strokeWidth: 3}),
+    Plot.dot(datiAnziani, {x: "anno", y: "valore", fill: "categoria", r: 5, tip: true})
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+html`<div class="card-grid">
+  <div class="card">
+    <h3>2019</h3>
+    <p class="small"><strong style="color: #3973b9;">Over 65:</strong> ${mpa2019.per1000over65.toFixed(1)}</p>
+    <p class="small"><strong style="color: #e83977;">Over 75:</strong> ${mpa2019.per1000over75.toFixed(1)}</p>
+  </div>
+  <div class="card highlight">
+    <h3 style="color: #f59e0b;">2025</h3>
+    <p class="small"><strong style="color: #3973b9;">Over 65:</strong> ${mpa2025.per1000over65.toFixed(1)}</p>
+    <p class="small"><strong style="color: #e83977;">Over 75:</strong> ${mpa2025.per1000over75.toFixed(1)}</p>
+  </div>
+  <div class="card">
+    <h3>2030</h3>
+    <p class="small"><strong style="color: #3973b9;">Over 65:</strong> ${mpa2030.per1000over65.toFixed(1)}</p>
+    <p class="small"><strong style="color: #e83977;">Over 75:</strong> ${mpa2030.per1000over75.toFixed(1)}</p>
+  </div>
+  <div class="card">
+    <h3>2040</h3>
+    <p class="small"><strong style="color: #3973b9;">Over 65:</strong> ${mpa2040.per1000over65.toFixed(1)}</p>
+    <p class="small"><strong style="color: #e83977;">Over 75:</strong> ${mpa2040.per1000over75.toFixed(1)}</p>
+  </div>
+</div>`
+```
+
+```{ojs}
+//| echo: false
+html`<div class="callout-note">
+  <strong>Il paradosso degli anziani:</strong> Nonostante l'aumento dei medici, il rapporto medici/anziani rimane stabile o addirittura diminuisce fino al 2028 a causa del rapido invecchiamento della popolazione. Solo dopo il 2030 si vede un miglioramento significativo.
+</div>`
+```
+
+---
+
+## Piramide demografica dei medici
+
+```{ojs}
+//| echo: false
+viewof annopiramide = Inputs.range([2019, 2040], {step: 1, value: 2025, label: "Anno"})
+```
+
+```{ojs}
+//| echo: false
+datiPiramide = andamento.map(row => ({
+  eta: parseInt(row["ETA' / ANNO"]),
+  numero: parseNumber(row[annopiramide])
+})).filter(d => !isNaN(d.eta) && d.numero > 0)
+```
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  title: `Distribuzione per età dei medici (${annopiramide})`,
+  width: width,
+  height: 600,
+  marginLeft: 50,
+  x: {label: "Numero medici", grid: true, domain: [0, 25000], tickFormat: d => Math.round(d / 1000) + "k"},
+  y: {label: "Età"},
+  marks: [
+    Plot.barX(datiPiramide, {
+      y: "eta",
+      x: "numero",
+      fill: d => d.eta <= 35 ? "#3973b9" : d.eta >= 56 ? "#e83977" : "#6c757d",
+      tip: true
+    }),
+    Plot.ruleX([0])
+  ]
+})
+```
+
+---
+
+## Fonti dei dati
+
+```{ojs}
+//| echo: false
+html`<div class="card-grid cols-2">
+  <div class="card">
+    <h3>Dati demografici</h3>
+    <ul>
+      <li>ISTAT - Proiezioni popolazione</li>
+      <li>OECD - Coefficienti carico sanitario</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Dati medici</h3>
+    <ul>
+      <li>FNOMCEO - Albo medici</li>
+      <li>MIUR - Immatricolati e laureati</li>
+      <li>Database GAP Med</li>
+    </ul>
+  </div>
+</div>`
+```
+
+---
+
+## Metodologia
+
+Il modello considera:
+
+1. **Nuovi ingressi**: laureati in medicina che completano la specializzazione, tenendo conto del semestre filtro e dell'aumento dei posti (da ~10.000/anno a ~23.000/anno dal 2030)
+
+2. **Uscite**: pensionamenti (età 68+) e mortalità stimata per fascia d'età
+
+3. **Migrazione netta**: saldo tra medici che emigrano e immigrano, basato su trend OECD
+
+4. **Carico SSN**: popolazione italiana pesata per coefficienti di utilizzo sanitario per fascia d'età (es: 85+ = 5.5x rispetto a 20-49)

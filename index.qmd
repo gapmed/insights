@@ -1,0 +1,9 @@
+---
+title: "GAP Med Insights"
+---
+
+Benvenuto in **GAP Med Insights**, la piattaforma di analisi dati per il settore medico italiano.
+
+## Analisi disponibili
+
+- [Pletora Medica 2025](analisi/pletora-medica-2025.qmd) - Analisi dell'evoluzione del numero di medici in Italia (2019-2040)
