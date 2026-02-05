@@ -12,7 +12,7 @@ echo "=== GAP Med Insights - Build con Docker (Quarto) ==="
 
 # Pulizia cache
 echo ">> Cleaning cache..."
-rm -rf ./dist ./_site ./.quarto
+rm -rf ./docs ./_site ./.quarto
 
 # Build dell'immagine Docker
 echo ">> Building Docker image..."
@@ -25,10 +25,10 @@ docker rm -f $CONTAINER_NAME 2>/dev/null || true
 echo ">> Running Quarto render..."
 docker run --name $CONTAINER_NAME $IMAGE_NAME
 
-# Copia la cartella dist dal container
-echo ">> Copying dist folder..."
-rm -rf ./dist
-docker cp $CONTAINER_NAME:/app/dist ./dist
+# Copia la cartella docs dal container
+echo ">> Copying docs folder..."
+rm -rf ./docs
+docker cp $CONTAINER_NAME:/app/docs ./docs
 
 # Pulizia container
 docker rm -f $CONTAINER_NAME
@@ -39,4 +39,4 @@ echo ""
 echo "Per visualizzare il sito in locale:"
 echo "  ./serve.sh"
 echo ""
-echo "Oppure apri direttamente: dist/index.html"
+echo "Oppure apri direttamente: docs/index.html"

@@ -1,0 +1,23 @@
+# Quarto
+.quarto/
+_site/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (if any legacy files)
+node_modules/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak

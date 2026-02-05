@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: dist
+  output-dir: docs
 
 website:
   title: "GAP Med Insights"
