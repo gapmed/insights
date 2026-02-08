@@ -111,6 +111,20 @@ a:hover {
   border-bottom: 2px solid #3973b9;
 }
 
+/* All active links - rosa GAPMED */
+.sidebar nav[role=doc-toc] ul>li>a.active,
+.sidebar nav[role=doc-toc] ul>li>ul>li>a.active {
+  border-left: 1px solid #e83977 !important;
+  color: #e83977 !important;
+}
+
+a.active,
+.active > a,
+.nav-link.active,
+a:active {
+  color: #e83977 !important;
+}
+
 /* Responsive grid */
 @media (max-width: 900px) {
   .card-grid {

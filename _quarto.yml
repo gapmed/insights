@@ -3,15 +3,12 @@ project:
   output-dir: docs
 
 website:
-  title: "GAP Med Insights"
+  title: "GAPMED Insights"
   favicon: assets/favicon.png
   navbar:
     logo: assets/logo.png
-    left:
-      - text: "Pletora Medica 2025"
-        href: analisi/pletora-medica-2025.qmd
   page-footer:
-    center: "© 2025 GAP Med Insights. Tutti i diritti riservati."
+    center: "© 2025 GAPMED Insights. Tutti i diritti riservati."
 
 format:
   html:
@@ -19,6 +16,7 @@ format:
       light: flatly
     css: custom-style.css
     toc: true
+    toc-title: "In questa pagina"
     toc-location: right
     page-layout: full
     grid:

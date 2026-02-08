@@ -1,0 +1,435 @@
+---
+title: "Migrazione dei Medici"
+subtitle: "Flussi reali di emigrazione e immigrazione dei medici italiani (2000-2022)"
+author: "GAPMED"
+date: today
+format:
+  html:
+    toc: true
+    toc-location: right
+    code-fold: true
+    code-tools: false
+---
+
+
+```{ojs}
+//| echo: false
+html`<div class="hero-box">
+  <h2 style="color: white; margin: 0;">La domanda chiave</h2>
+  <p style="font-size: 1.2em; margin: 1rem 0 0 0;">
+    Quanti medici italiani emigrano davvero ogni anno? E quanti ne arrivano dall'estero?
+    I numeri che circolano nel dibattito pubblico sono spesso confusi, gonfiati o mal interpretati.
+  </p>
+</div>`
+```
+
+Negli ultimi anni si è diffusa la percezione di una "fuga dei camici bianchi" dall'Italia verso l'estero. I numeri citati variano enormemente: si parla di decine di migliaia di medici italiani all'estero, con toni allarmistici che suggeriscono un'emorragia inarrestabile di capitale umano.
+
+Ma questi numeri sono corretti? E soprattutto: sono interpretati correttamente?
+
+La confusione nasce da un errore metodologico fondamentale: **confondere lo stock con il flusso**.
+
+## Stock vs Flusso: un errore comune
+
+::: {.callout-warning}
+**L'errore da evitare**: Sommare i medici italiani presenti in diversi paesi esteri per ottenere il "totale degli emigrati" è metodologicamente scorretto. Ogni paese conta i medici presenti sul proprio territorio in un dato momento (stock), ma questi numeri non possono essere sommati tra anni diversi né confrontati direttamente con i flussi annuali.
+:::
+
+- **Stock**: numero di medici italiani che lavorano in un paese estero in un dato momento. È una fotografia istantanea.
+- **Flusso**: numero di medici che si trasferiscono da un paese all'altro in un anno. È un dato dinamico.
+
+Lo stock include medici emigrati decenni fa, medici che hanno acquisito la cittadinanza del paese ospitante, medici che sono rientrati e ripartiti più volte. Il flusso invece misura il movimento effettivo anno per anno.
+
+### Un esempio concreto: il caso Israele
+
+Alcune analisi riportano circa 28.000 medici "italiani" in Israele. Ma Israele ha una popolazione di circa 10 milioni di abitanti e un totale di circa 30.000 medici. È plausibile che quasi tutti i medici israeliani siano italiani?
+
+Il dato si spiega appunto per confusione tra i concetti di stock e flow.
+
+```{ojs}
+//| echo: false
+// Caricamento dati
+emigrazione = FileAttachment("../data/migrazione/emigrazione.csv").csv()
+immigrazione = FileAttachment("../data/migrazione/immigrazione.csv").csv()
+immigrazioneDettaglio = FileAttachment("../data/migrazione/immigrazione-dettaglio.csv").csv()
+```
+
+```{ojs}
+//| echo: false
+// Funzioni di parsing
+function parseNumber(str) {
+  if (!str || str === "") return 0;
+  return parseFloat(str.replace(/,/g, "").replace(/%/g, ""));
+}
+
+function fmt(n) {
+  return Math.round(n).toLocaleString("it-IT");
+}
+
+anni = {
+  const arr = [];
+  for (let y = 2000; y <= 2022; y++) arr.push(y);
+  return arr;
+}
+```
+
+---
+
+## I flussi reali di emigrazione
+
+I dati OECD sui flussi migratori dei medici mostrano una realtà molto diversa dalle cifre sensazionalistiche. Ogni anno emigrano dall'Italia tra 500 e 1.600 medici, con un picco nel 2014.
+
+```{ojs}
+//| echo: false
+// Estrai il totale annuale dall'ultima riga
+totaleEmigrazione = anni.map(anno => {
+  const row = emigrazione.find(r => r.Country === "Grand Total");
+  return {
+    anno: anno,
+    totale: row ? parseNumber(row[anno]) : 0
+  };
+}).filter(d => d.totale > 0)
+```
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  title: "Medici emigrati dall'Italia per anno (flusso annuale)",
+  width: width,
+  height: 400,
+  y: {label: "Medici emigrati", grid: true, domain: [0, 1800]},
+  x: {label: "Anno", tickFormat: d => String(d)},
+  marks: [
+    Plot.ruleY([1000], {stroke: "#ccc", strokeDasharray: "4,4"}),
+    Plot.line(totaleEmigrazione, {x: "anno", y: "totale", stroke: "#e83977", strokeWidth: 3}),
+    Plot.dot(totaleEmigrazione, {x: "anno", y: "totale", fill: "#e83977", r: 5, tip: true})
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+totEmigrati = totaleEmigrazione.reduce((acc, d) => acc + d.totale, 0)
+mediaAnnua = totEmigrati / totaleEmigrazione.length
+piccoAnno = totaleEmigrazione.reduce((max, d) => d.totale > max.totale ? d : max, {totale: 0})
+```
+
+```{ojs}
+//| echo: false
+html`<div class="card-grid">
+  <div class="card">
+    <h3>Totale 2000-2022</h3>
+    <p class="big">${fmt(totEmigrati)}</p>
+    <p class="small muted">medici emigrati</p>
+  </div>
+  <div class="card">
+    <h3>Media annua</h3>
+    <p class="big">${fmt(mediaAnnua)}</p>
+    <p class="small muted">medici/anno</p>
+  </div>
+  <div class="card highlight">
+    <h3>Anno di picco</h3>
+    <p class="big">${piccoAnno.anno}</p>
+    <p class="small muted">${fmt(piccoAnno.totale)} medici</p>
+  </div>
+</div>`
+```
+
+### Dove vanno i medici italiani?
+
+Le destinazioni principali sono il Regno Unito, la Svizzera e la Germania — paesi con salari più alti e migliori condizioni di lavoro. Dopo la Brexit, il flusso verso il Regno Unito si è ridotto significativamente.
+
+```{ojs}
+//| echo: false
+// Calcola totali per paese (escluso Grand Total)
+totaliPerPaese = emigrazione
+  .filter(r => r.Country !== "Grand Total" && r.Country !== "Turchia")
+  .map(r => ({
+    paese: r.Country,
+    totale: parseNumber(r["Grand Total"])
+  }))
+  .filter(d => d.totale > 100)
+  .sort((a, b) => b.totale - a.totale)
+```
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  title: "Principali paesi di destinazione (2000-2022)",
+  width: width,
+  height: 450,
+  marginLeft: 120,
+  x: {label: "Medici emigrati (totale periodo)", grid: true},
+  y: {label: null},
+  marks: [
+    Plot.barX(totaliPerPaese, {
+      y: "paese",
+      x: "totale",
+      fill: "#3973b9",
+      tip: true,
+      sort: {y: "-x"}
+    }),
+    Plot.ruleX([0])
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+html`<div class="callout-tip">
+  <strong>Cosa emerge:</strong> Il Regno Unito è stato storicamente la prima destinazione (${fmt(totaliPerPaese.find(d => d.paese === "United Kingdom")?.totale || 0)} medici in 23 anni), seguito da Svizzera (${fmt(totaliPerPaese.find(d => d.paese === "Switzerland")?.totale || 0)}) e Germania (${fmt(totaliPerPaese.find(d => d.paese === "Germany")?.totale || 0)}). Israele, nonostante i numeri "stock" gonfiati, ha ricevuto solo ${fmt(totaliPerPaese.find(d => d.paese === "Israel")?.totale || 0)} medici italiani in 23 anni — circa 45 all'anno.
+</div>`
+```
+
+### L'andamento nel tempo per paese
+
+```{ojs}
+//| echo: false
+// Dati per i principali paesi nel tempo
+paesiPrincipali = ["United Kingdom", "Switzerland", "Germany", "France", "Belgium", "Spain"]
+
+datiPaesiTempo = paesiPrincipali.flatMap(paese => {
+  const row = emigrazione.find(r => r.Country === paese);
+  if (!row) return [];
+  return anni.map(anno => ({
+    anno: anno,
+    paese: paese,
+    valore: parseNumber(row[anno])
+  })).filter(d => d.valore > 0);
+})
+```
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  title: "Emigrazione per paese di destinazione (2000-2022)",
+  width: width,
+  height: 400,
+  y: {label: "Medici emigrati", grid: true},
+  x: {label: "Anno", tickFormat: d => String(d)},
+  color: {legend: true},
+  marks: [
+    Plot.line(datiPaesiTempo, {x: "anno", y: "valore", stroke: "paese", strokeWidth: 2}),
+    Plot.dot(datiPaesiTempo, {x: "anno", y: "valore", fill: "paese", r: 3, tip: true})
+  ]
+})
+```
+
+---
+
+## I flussi di immigrazione
+
+L'immigrazione di medici verso l'Italia è un fenomeno meno noto ma significativo. Ogni anno arrivano in Italia tra 60 e 300 medici stranieri.
+
+```{ojs}
+//| echo: false
+totaleImmigrazione = immigrazione.map(r => ({
+  anno: parseInt(r.Anno),
+  totale: parseInt(r.Totale)
+})).filter(d => d.anno >= 2000 && d.anno <= 2022)
+```
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  title: "Medici immigrati in Italia per anno (flusso annuale)",
+  width: width,
+  height: 400,
+  y: {label: "Medici immigrati", grid: true, domain: [0, 350]},
+  x: {label: "Anno", tickFormat: d => String(d)},
+  marks: [
+    Plot.line(totaleImmigrazione, {x: "anno", y: "totale", stroke: "#3973b9", strokeWidth: 3}),
+    Plot.dot(totaleImmigrazione, {x: "anno", y: "totale", fill: "#3973b9", r: 5, tip: true})
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+totImmigrati = totaleImmigrazione.reduce((acc, d) => acc + d.totale, 0)
+mediaImmigrazione = totImmigrati / totaleImmigrazione.length
+```
+
+```{ojs}
+//| echo: false
+html`<div class="card-grid">
+  <div class="card">
+    <h3>Totale 2000-2022</h3>
+    <p class="big">${fmt(totImmigrati)}</p>
+    <p class="small muted">medici immigrati</p>
+  </div>
+  <div class="card">
+    <h3>Media annua</h3>
+    <p class="big">${fmt(mediaImmigrazione)}</p>
+    <p class="small muted">medici/anno</p>
+  </div>
+</div>`
+```
+
+### Da dove vengono i medici stranieri?
+
+Negli ultimi anni (2019-2022) i medici immigrati provengono principalmente dalla Romania, dalla Spagna, dall'Austria e dalla Bulgaria.
+
+```{ojs}
+//| echo: false
+// Top paesi di origine (2019-2022)
+totaliOrigine = immigrazioneDettaglio
+  .filter(r => r.Country !== "Grand Total" && r.Country !== "Others")
+  .map(r => ({
+    paese: r.Country,
+    totale: parseNumber(r["Grand Total"])
+  }))
+  .filter(d => d.totale >= 10)
+  .sort((a, b) => b.totale - a.totale)
+  .slice(0, 15)
+```
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  title: "Principali paesi di origine dei medici immigrati (2019-2022)",
+  width: width,
+  height: 400,
+  marginLeft: 100,
+  x: {label: "Medici immigrati", grid: true},
+  y: {label: null},
+  marks: [
+    Plot.barX(totaliOrigine, {
+      y: "paese",
+      x: "totale",
+      fill: "#3973b9",
+      tip: true,
+      sort: {y: "-x"}
+    }),
+    Plot.ruleX([0])
+  ]
+})
+```
+
+---
+
+## Il saldo migratorio netto
+
+Il confronto tra emigrazione e immigrazione mostra un saldo costantemente negativo: l'Italia perde ogni anno più medici di quanti ne acquisisca.
+
+```{ojs}
+//| echo: false
+saldoMigratorio = anni.map(anno => {
+  const emig = totaleEmigrazione.find(d => d.anno === anno);
+  const immig = totaleImmigrazione.find(d => d.anno === anno);
+  return {
+    anno: anno,
+    emigrazione: emig ? emig.totale : 0,
+    immigrazione: immig ? immig.totale : 0,
+    saldo: (immig ? immig.totale : 0) - (emig ? emig.totale : 0)
+  };
+}).filter(d => d.emigrazione > 0 || d.immigrazione > 0)
+```
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  title: "Saldo migratorio netto dei medici (immigrazione - emigrazione)",
+  width: width,
+  height: 400,
+  y: {label: "Saldo netto", grid: true},
+  x: {label: "Anno", tickFormat: d => String(d)},
+  marks: [
+    Plot.ruleY([0], {stroke: "#333"}),
+    Plot.line(saldoMigratorio, {x: "anno", y: "saldo", stroke: "#e83977", strokeWidth: 3}),
+    Plot.dot(saldoMigratorio, {x: "anno", y: "saldo", fill: d => d.saldo >= 0 ? "#3973b9" : "#e83977", r: 5, tip: true}),
+    Plot.areaY(saldoMigratorio, {x: "anno", y: "saldo", fill: "#e83977", fillOpacity: 0.2})
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+saldoTotale = saldoMigratorio.reduce((acc, d) => acc + d.saldo, 0)
+saldoMedio = saldoTotale / saldoMigratorio.length
+```
+
+```{ojs}
+//| echo: false
+html`<div class="card-grid">
+  <div class="card">
+    <h3>Saldo totale 2000-2022</h3>
+    <p class="big" style="color: #e83977;">${fmt(saldoTotale)}</p>
+    <p class="small muted">medici persi</p>
+  </div>
+  <div class="card">
+    <h3>Saldo medio annuo</h3>
+    <p class="big" style="color: #e83977;">${fmt(saldoMedio)}</p>
+    <p class="small muted">medici/anno</p>
+  </div>
+</div>`
+```
+
+```{ojs}
+//| echo: false
+html`<div class="callout-tip">
+  <strong>Cosa emerge:</strong> L'Italia perde mediamente circa ${fmt(Math.abs(saldoMedio))} medici all'anno per effetto della migrazione netta. In 23 anni, il saldo cumulato è di circa ${fmt(Math.abs(saldoTotale))} medici — un numero significativo ma molto inferiore alle cifre "stock" che circolano nel dibattito pubblico. Questa perdita, pur rilevante, rappresenta circa lo 0.2% della forza lavoro medica italiana ogni anno.
+</div>`
+```
+
+---
+
+## Come interpretare i dati
+
+::: {.callout-note}
+### I numeri giusti da usare
+
+- **Flusso annuale di emigrazione**: circa 800-1.000 medici/anno negli ultimi anni
+- **Flusso annuale di immigrazione**: circa 250-300 medici/anno negli ultimi anni
+- **Saldo netto annuale**: circa -500/-700 medici/anno
+- **Saldo cumulato 2000-2022**: circa -16.000 medici
+
+Questi sono i numeri corretti da usare nelle analisi e nel dibattito pubblico.
+:::
+
+### Cosa NON fare
+
+1. **Non sommare gli stock di paesi diversi**: Ogni paese conta i medici "italiani" con criteri diversi (cittadinanza, luogo di formazione, luogo di nascita).
+
+2. **Non confondere cittadinanza con emigrazione**: Molti "medici italiani all'estero" sono cittadini di altri paesi con passaporto italiano, non emigrati dall'Italia.
+
+3. **Non sommare flussi di anni diversi come se fossero stock**: Un medico emigrato nel 2005 e rientrato nel 2010 verrebbe contato due volte.
+
+4. **Non ignorare i rientri**: Molti medici emigrano per periodi limitati (specializzazione, esperienze formative) e poi rientrano.
+
+---
+
+## Fonti dei dati
+
+```{ojs}
+//| echo: false
+html`<div class="card-grid cols-2">
+  <div class="card">
+    <h3>Emigrazione</h3>
+    <ul>
+      <li>OECD Health Statistics - Health Workforce Migration</li>
+      <li>Dati sui flussi annuali per paese di destinazione</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Immigrazione</h3>
+    <ul>
+      <li>OECD Health Statistics - Health Workforce Migration</li>
+      <li>Dati sui flussi annuali per paese di origine</li>
+    </ul>
+  </div>
+</div>`
+```
+
+---
+
+## Metodologia
+
+I dati presentati in questa analisi provengono dalle statistiche OECD sulla migrazione del personale sanitario. Si tratta di **dati sui flussi** (numero di medici che si trasferiscono ogni anno), non di dati sugli stock (numero totale di medici presenti in un paese).
+
+I dati OECD hanno alcune limitazioni:
+- Non tutti i paesi riportano dati completi per tutti gli anni
+- Le definizioni di "medico" e "italiano" possono variare tra paesi
+- I rientri non sono sempre tracciati separatamente
+
+Nonostante queste limitazioni, i dati OECD rappresentano la fonte più affidabile e metodologicamente corretta per analizzare i flussi migratori dei medici a livello internazionale.

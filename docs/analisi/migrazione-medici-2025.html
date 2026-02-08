@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="GAPMED">
+<meta name="dcterms.date" content="2026-02-08">
+
+<title>GAPMED Insights - Migrazione dei Medici</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../assets/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script type="module" src="../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../custom-style.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../assets/logo.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">GAPMED Insights</span>
+    </a>
+  </div>
+        <div class="quarto-navbar-tools tools-end">
+</div>
+          <div id="quarto-search" class="" title="Search"></div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">In questa pagina</h2>
+   
+  <ul>
+  <li><a href="#stock-vs-flusso-un-errore-comune" id="toc-stock-vs-flusso-un-errore-comune" class="nav-link active" data-scroll-target="#stock-vs-flusso-un-errore-comune">Stock vs Flusso: un errore comune</a>
+  <ul class="collapse">
+  <li><a href="#un-esempio-concreto-il-caso-israele" id="toc-un-esempio-concreto-il-caso-israele" class="nav-link" data-scroll-target="#un-esempio-concreto-il-caso-israele">Un esempio concreto: il caso Israele</a></li>
+  </ul></li>
+  <li><a href="#i-flussi-reali-di-emigrazione" id="toc-i-flussi-reali-di-emigrazione" class="nav-link" data-scroll-target="#i-flussi-reali-di-emigrazione">I flussi reali di emigrazione</a>
+  <ul class="collapse">
+  <li><a href="#dove-vanno-i-medici-italiani" id="toc-dove-vanno-i-medici-italiani" class="nav-link" data-scroll-target="#dove-vanno-i-medici-italiani">Dove vanno i medici italiani?</a></li>
+  <li><a href="#landamento-nel-tempo-per-paese" id="toc-landamento-nel-tempo-per-paese" class="nav-link" data-scroll-target="#landamento-nel-tempo-per-paese">L’andamento nel tempo per paese</a></li>
+  </ul></li>
+  <li><a href="#i-flussi-di-immigrazione" id="toc-i-flussi-di-immigrazione" class="nav-link" data-scroll-target="#i-flussi-di-immigrazione">I flussi di immigrazione</a>
+  <ul class="collapse">
+  <li><a href="#da-dove-vengono-i-medici-stranieri" id="toc-da-dove-vengono-i-medici-stranieri" class="nav-link" data-scroll-target="#da-dove-vengono-i-medici-stranieri">Da dove vengono i medici stranieri?</a></li>
+  </ul></li>
+  <li><a href="#il-saldo-migratorio-netto" id="toc-il-saldo-migratorio-netto" class="nav-link" data-scroll-target="#il-saldo-migratorio-netto">Il saldo migratorio netto</a></li>
+  <li><a href="#come-interpretare-i-dati" id="toc-come-interpretare-i-dati" class="nav-link" data-scroll-target="#come-interpretare-i-dati">Come interpretare i dati</a>
+  <ul class="collapse">
+  <li><a href="#cosa-non-fare" id="toc-cosa-non-fare" class="nav-link" data-scroll-target="#cosa-non-fare">Cosa NON fare</a></li>
+  </ul></li>
+  <li><a href="#fonti-dei-dati" id="toc-fonti-dei-dati" class="nav-link" data-scroll-target="#fonti-dei-dati">Fonti dei dati</a></li>
+  <li><a href="#metodologia" id="toc-metodologia" class="nav-link" data-scroll-target="#metodologia">Metodologia</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Migrazione dei Medici</h1>
+<p class="subtitle lead">Flussi reali di emigrazione e immigrazione dei medici italiani (2000-2022)</p>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-left">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>GAPMED </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 8, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="16" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 15;"><span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div class="hero-box"&gt;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;h2 style="color: white; margin: 0;"&gt;La domanda chiave&lt;/h2&gt;</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;p style="font-size: 1.2em; margin: 1rem 0 0 0;"&gt;</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="vs">    Quanti medici italiani emigrano davvero ogni anno? E quanti ne arrivano dall'estero?</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="vs">    I numeri che circolano nel dibattito pubblico sono spesso confusi, gonfiati o mal interpretati.</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/p&gt;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/div&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-1" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<p>Negli ultimi anni si è diffusa la percezione di una “fuga dei camici bianchi” dall’Italia verso l’estero. I numeri citati variano enormemente: si parla di decine di migliaia di medici italiani all’estero, con toni allarmistici che suggeriscono un’emorragia inarrestabile di capitale umano.</p>
+<p>Ma questi numeri sono corretti? E soprattutto: sono interpretati correttamente?</p>
+<p>La confusione nasce da un errore metodologico fondamentale: <strong>confondere lo stock con il flusso</strong>.</p>
+<section id="stock-vs-flusso-un-errore-comune" class="level2">
+<h2 class="anchored" data-anchor-id="stock-vs-flusso-un-errore-comune">Stock vs Flusso: un errore comune</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>L’errore da evitare</strong>: Sommare i medici italiani presenti in diversi paesi esteri per ottenere il “totale degli emigrati” è metodologicamente scorretto. Ogni paese conta i medici presenti sul proprio territorio in un dato momento (stock), ma questi numeri non possono essere sommati tra anni diversi né confrontati direttamente con i flussi annuali.</p>
+</div>
+</div>
+<ul>
+<li><strong>Stock</strong>: numero di medici italiani che lavorano in un paese estero in un dato momento. È una fotografia istantanea.</li>
+<li><strong>Flusso</strong>: numero di medici che si trasferiscono da un paese all’altro in un anno. È un dato dinamico.</li>
+</ul>
+<p>Lo stock include medici emigrati decenni fa, medici che hanno acquisito la cittadinanza del paese ospitante, medici che sono rientrati e ripartiti più volte. Il flusso invece misura il movimento effettivo anno per anno.</p>
+<section id="un-esempio-concreto-il-caso-israele" class="level3">
+<h3 class="anchored" data-anchor-id="un-esempio-concreto-il-caso-israele">Un esempio concreto: il caso Israele</h3>
+<p>Alcune analisi riportano circa 28.000 medici “italiani” in Israele. Ma Israele ha una popolazione di circa 10 milioni di abitanti e un totale di circa 30.000 medici. È plausibile che quasi tutti i medici israeliani siano italiani?</p>
+<p>Il dato si spiega appunto per confusione tra i concetti di stock e flow.</p>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="52" data-source-offset="-20"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 51;"><span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>emigrazione <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"../data/migrazione/emigrazione.csv"</span>)<span class="op">.</span><span class="fu">csv</span>()</span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>immigrazione <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"../data/migrazione/immigrazione.csv"</span>)<span class="op">.</span><span class="fu">csv</span>()</span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>immigrazioneDettaglio <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"../data/migrazione/immigrazione-dettaglio.csv"</span>)<span class="op">.</span><span class="fu">csv</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="60" data-source-offset="-23"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 59;"><span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">parseNumber</span>(str) {</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>str <span class="op">||</span> str <span class="op">===</span> <span class="st">""</span>) <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="pp">parseFloat</span>(str<span class="op">.</span><span class="fu">replace</span>(<span class="ss">/,/g</span><span class="op">,</span> <span class="st">""</span>)<span class="op">.</span><span class="fu">replace</span>(<span class="ss">/%/g</span><span class="op">,</span> <span class="st">""</span>))<span class="op">;</span></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">fmt</span>(n) {</span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>(n)<span class="op">.</span><span class="fu">toLocaleString</span>(<span class="st">"it-IT"</span>)<span class="op">;</span></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>anni <span class="op">=</span> {</span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> arr <span class="op">=</span> []<span class="op">;</span></span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (<span class="kw">let</span> y <span class="op">=</span> <span class="dv">2000</span><span class="op">;</span> y <span class="op">&lt;=</span> <span class="dv">2022</span><span class="op">;</span> y<span class="op">++</span>) arr<span class="op">.</span><span class="fu">push</span>(y)<span class="op">;</span></span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> arr<span class="op">;</span></span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="i-flussi-reali-di-emigrazione" class="level2">
+<h2 class="anchored" data-anchor-id="i-flussi-reali-di-emigrazione">I flussi reali di emigrazione</h2>
+<p>I dati OECD sui flussi migratori dei medici mostrano una realtà molto diversa dalle cifre sensazionalistiche. Ogni anno emigrano dall’Italia tra 500 e 1.600 medici, con un picco nel 2014.</p>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="83" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 82;"><span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a><span class="co">// Estrai il totale annuale dall'ultima riga</span></span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a>totaleEmigrazione <span class="op">=</span> anni<span class="op">.</span><span class="fu">map</span>(anno <span class="kw">=&gt;</span> {</span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> row <span class="op">=</span> emigrazione<span class="op">.</span><span class="fu">find</span>(r <span class="kw">=&gt;</span> r<span class="op">.</span><span class="at">Country</span> <span class="op">===</span> <span class="st">"Grand Total"</span>)<span class="op">;</span></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> {</span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a>    <span class="dt">anno</span><span class="op">:</span> anno<span class="op">,</span></span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a>    <span class="dt">totale</span><span class="op">:</span> row <span class="op">?</span> <span class="fu">parseNumber</span>(row[anno]) <span class="op">:</span> <span class="dv">0</span></span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a>})<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">totale</span> <span class="op">&gt;</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="95" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 94;"><span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span><span class="op">:</span> <span class="st">"Medici emigrati dall'Italia per anno (flusso annuale)"</span><span class="op">,</span></span>
+<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> width<span class="op">,</span></span>
+<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span></span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Medici emigrati"</span><span class="op">,</span> <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">1800</span>]}<span class="op">,</span></span>
+<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Anno"</span><span class="op">,</span> <span class="dt">tickFormat</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="bu">String</span>(d)}<span class="op">,</span></span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">1000</span>]<span class="op">,</span> {<span class="dt">stroke</span><span class="op">:</span> <span class="st">"#ccc"</span><span class="op">,</span> <span class="dt">strokeDasharray</span><span class="op">:</span> <span class="st">"4,4"</span>})<span class="op">,</span></span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(totaleEmigrazione<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"anno"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"totale"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#e83977"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">3</span>})<span class="op">,</span></span>
+<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(totaleEmigrazione<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"anno"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"totale"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#e83977"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span>})</span>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb5-106"><a href="#cb5-106" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-5" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="112" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 111;"><span id="cb6-112"><a href="#cb6-112" aria-hidden="true" tabindex="-1"></a>totEmigrati <span class="op">=</span> totaleEmigrazione<span class="op">.</span><span class="fu">reduce</span>((acc<span class="op">,</span> d) <span class="kw">=&gt;</span> acc <span class="op">+</span> d<span class="op">.</span><span class="at">totale</span><span class="op">,</span> <span class="dv">0</span>)</span>
+<span id="cb6-113"><a href="#cb6-113" aria-hidden="true" tabindex="-1"></a>mediaAnnua <span class="op">=</span> totEmigrati <span class="op">/</span> totaleEmigrazione<span class="op">.</span><span class="at">length</span></span>
+<span id="cb6-114"><a href="#cb6-114" aria-hidden="true" tabindex="-1"></a>piccoAnno <span class="op">=</span> totaleEmigrazione<span class="op">.</span><span class="fu">reduce</span>((max<span class="op">,</span> d) <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">totale</span> <span class="op">&gt;</span> max<span class="op">.</span><span class="at">totale</span> <span class="op">?</span> d <span class="op">:</span> max<span class="op">,</span> {<span class="dt">totale</span><span class="op">:</span> <span class="dv">0</span>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-6-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-6-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-6-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="118" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 117;"><span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div class="card-grid"&gt;</span></span>
+<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;div class="card"&gt;</span></span>
+<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;h3&gt;Totale 2000-2022&lt;/h3&gt;</span></span>
+<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;p class="big"&gt;</span><span class="sc">${</span><span class="fu">fmt</span>(totEmigrati)<span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
+<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;p class="small muted"&gt;medici emigrati&lt;/p&gt;</span></span>
+<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;</span></span>
+<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;div class="card"&gt;</span></span>
+<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;h3&gt;Media annua&lt;/h3&gt;</span></span>
+<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;p class="big"&gt;</span><span class="sc">${</span><span class="fu">fmt</span>(mediaAnnua)<span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
+<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;p class="small muted"&gt;medici/anno&lt;/p&gt;</span></span>
+<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;</span></span>
+<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;div class="card highlight"&gt;</span></span>
+<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;h3&gt;Anno di picco&lt;/h3&gt;</span></span>
+<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;p class="big"&gt;</span><span class="sc">${</span>piccoAnno<span class="op">.</span><span class="at">anno</span><span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
+<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;p class="small muted"&gt;</span><span class="sc">${</span><span class="fu">fmt</span>(piccoAnno<span class="op">.</span><span class="at">totale</span>)<span class="sc">}</span><span class="vs"> medici&lt;/p&gt;</span></span>
+<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;</span></span>
+<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/div&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-7" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<section id="dove-vanno-i-medici-italiani" class="level3">
+<h3 class="anchored" data-anchor-id="dove-vanno-i-medici-italiani">Dove vanno i medici italiani?</h3>
+<p>Le destinazioni principali sono il Regno Unito, la Svizzera e la Germania — paesi con salari più alti e migliori condizioni di lavoro. Dopo la Brexit, il flusso verso il Regno Unito si è ridotto significativamente.</p>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="143" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 142;"><span id="cb8-143"><a href="#cb8-143" aria-hidden="true" tabindex="-1"></a><span class="co">// Calcola totali per paese (escluso Grand Total)</span></span>
+<span id="cb8-144"><a href="#cb8-144" aria-hidden="true" tabindex="-1"></a>totaliPerPaese <span class="op">=</span> emigrazione</span>
+<span id="cb8-145"><a href="#cb8-145" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">filter</span>(r <span class="kw">=&gt;</span> r<span class="op">.</span><span class="at">Country</span> <span class="op">!==</span> <span class="st">"Grand Total"</span> <span class="op">&amp;&amp;</span> r<span class="op">.</span><span class="at">Country</span> <span class="op">!==</span> <span class="st">"Turchia"</span>)</span>
+<span id="cb8-146"><a href="#cb8-146" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">map</span>(r <span class="kw">=&gt;</span> ({</span>
+<span id="cb8-147"><a href="#cb8-147" aria-hidden="true" tabindex="-1"></a>    <span class="dt">paese</span><span class="op">:</span> r<span class="op">.</span><span class="at">Country</span><span class="op">,</span></span>
+<span id="cb8-148"><a href="#cb8-148" aria-hidden="true" tabindex="-1"></a>    <span class="dt">totale</span><span class="op">:</span> <span class="fu">parseNumber</span>(r[<span class="st">"Grand Total"</span>])</span>
+<span id="cb8-149"><a href="#cb8-149" aria-hidden="true" tabindex="-1"></a>  }))</span>
+<span id="cb8-150"><a href="#cb8-150" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">totale</span> <span class="op">&gt;</span> <span class="dv">100</span>)</span>
+<span id="cb8-151"><a href="#cb8-151" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">sort</span>((a<span class="op">,</span> b) <span class="kw">=&gt;</span> b<span class="op">.</span><span class="at">totale</span> <span class="op">-</span> a<span class="op">.</span><span class="at">totale</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-8" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb9" data-startfrom="156" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 155;"><span id="cb9-156"><a href="#cb9-156" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb9-157"><a href="#cb9-157" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span><span class="op">:</span> <span class="st">"Principali paesi di destinazione (2000-2022)"</span><span class="op">,</span></span>
+<span id="cb9-158"><a href="#cb9-158" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> width<span class="op">,</span></span>
+<span id="cb9-159"><a href="#cb9-159" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">450</span><span class="op">,</span></span>
+<span id="cb9-160"><a href="#cb9-160" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">120</span><span class="op">,</span></span>
+<span id="cb9-161"><a href="#cb9-161" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Medici emigrati (totale periodo)"</span><span class="op">,</span> <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span>}<span class="op">,</span></span>
+<span id="cb9-162"><a href="#cb9-162" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="kw">null</span>}<span class="op">,</span></span>
+<span id="cb9-163"><a href="#cb9-163" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb9-164"><a href="#cb9-164" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barX</span>(totaliPerPaese<span class="op">,</span> {</span>
+<span id="cb9-165"><a href="#cb9-165" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"paese"</span><span class="op">,</span></span>
+<span id="cb9-166"><a href="#cb9-166" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"totale"</span><span class="op">,</span></span>
+<span id="cb9-167"><a href="#cb9-167" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"#3973b9"</span><span class="op">,</span></span>
+<span id="cb9-168"><a href="#cb9-168" aria-hidden="true" tabindex="-1"></a>      <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb9-169"><a href="#cb9-169" aria-hidden="true" tabindex="-1"></a>      <span class="dt">sort</span><span class="op">:</span> {<span class="dt">y</span><span class="op">:</span> <span class="st">"-x"</span>}</span>
+<span id="cb9-170"><a href="#cb9-170" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb9-171"><a href="#cb9-171" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>])</span>
+<span id="cb9-172"><a href="#cb9-172" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb9-173"><a href="#cb9-173" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-9" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb10" data-startfrom="178" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 177;"><span id="cb10-178"><a href="#cb10-178" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div class="callout-tip"&gt;</span></span>
+<span id="cb10-179"><a href="#cb10-179" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;strong&gt;Cosa emerge:&lt;/strong&gt; Il Regno Unito è stato storicamente la prima destinazione (</span><span class="sc">${</span><span class="fu">fmt</span>(totaliPerPaese<span class="op">.</span><span class="fu">find</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">paese</span> <span class="op">===</span> <span class="st">"United Kingdom"</span>)<span class="op">?.</span><span class="at">totale</span> <span class="op">||</span> <span class="dv">0</span>)<span class="sc">}</span><span class="vs"> medici in 23 anni), seguito da Svizzera (</span><span class="sc">${</span><span class="fu">fmt</span>(totaliPerPaese<span class="op">.</span><span class="fu">find</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">paese</span> <span class="op">===</span> <span class="st">"Switzerland"</span>)<span class="op">?.</span><span class="at">totale</span> <span class="op">||</span> <span class="dv">0</span>)<span class="sc">}</span><span class="vs">) e Germania (</span><span class="sc">${</span><span class="fu">fmt</span>(totaliPerPaese<span class="op">.</span><span class="fu">find</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">paese</span> <span class="op">===</span> <span class="st">"Germany"</span>)<span class="op">?.</span><span class="at">totale</span> <span class="op">||</span> <span class="dv">0</span>)<span class="sc">}</span><span class="vs">). Israele, nonostante i numeri "stock" gonfiati, ha ricevuto solo </span><span class="sc">${</span><span class="fu">fmt</span>(totaliPerPaese<span class="op">.</span><span class="fu">find</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">paese</span> <span class="op">===</span> <span class="st">"Israel"</span>)<span class="op">?.</span><span class="at">totale</span> <span class="op">||</span> <span class="dv">0</span>)<span class="sc">}</span><span class="vs"> medici italiani in 23 anni — circa 45 all'anno.</span></span>
+<span id="cb10-180"><a href="#cb10-180" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/div&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-10" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</section>
+<section id="landamento-nel-tempo-per-paese" class="level3">
+<h3 class="anchored" data-anchor-id="landamento-nel-tempo-per-paese">L’andamento nel tempo per paese</h3>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb11" data-startfrom="189" data-source-offset="-41"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 188;"><span id="cb11-189"><a href="#cb11-189" aria-hidden="true" tabindex="-1"></a>paesiPrincipali <span class="op">=</span> [<span class="st">"United Kingdom"</span><span class="op">,</span> <span class="st">"Switzerland"</span><span class="op">,</span> <span class="st">"Germany"</span><span class="op">,</span> <span class="st">"France"</span><span class="op">,</span> <span class="st">"Belgium"</span><span class="op">,</span> <span class="st">"Spain"</span>]</span>
+<span id="cb11-190"><a href="#cb11-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-191"><a href="#cb11-191" aria-hidden="true" tabindex="-1"></a>datiPaesiTempo <span class="op">=</span> paesiPrincipali<span class="op">.</span><span class="fu">flatMap</span>(paese <span class="kw">=&gt;</span> {</span>
+<span id="cb11-192"><a href="#cb11-192" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> row <span class="op">=</span> emigrazione<span class="op">.</span><span class="fu">find</span>(r <span class="kw">=&gt;</span> r<span class="op">.</span><span class="at">Country</span> <span class="op">===</span> paese)<span class="op">;</span></span>
+<span id="cb11-193"><a href="#cb11-193" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="op">!</span>row) <span class="cf">return</span> []<span class="op">;</span></span>
+<span id="cb11-194"><a href="#cb11-194" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> anni<span class="op">.</span><span class="fu">map</span>(anno <span class="kw">=&gt;</span> ({</span>
+<span id="cb11-195"><a href="#cb11-195" aria-hidden="true" tabindex="-1"></a>    <span class="dt">anno</span><span class="op">:</span> anno<span class="op">,</span></span>
+<span id="cb11-196"><a href="#cb11-196" aria-hidden="true" tabindex="-1"></a>    <span class="dt">paese</span><span class="op">:</span> paese<span class="op">,</span></span>
+<span id="cb11-197"><a href="#cb11-197" aria-hidden="true" tabindex="-1"></a>    <span class="dt">valore</span><span class="op">:</span> <span class="fu">parseNumber</span>(row[anno])</span>
+<span id="cb11-198"><a href="#cb11-198" aria-hidden="true" tabindex="-1"></a>  }))<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">valore</span> <span class="op">&gt;</span> <span class="dv">0</span>)<span class="op">;</span></span>
+<span id="cb11-199"><a href="#cb11-199" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-11-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-11-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb12" data-startfrom="203" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 202;"><span id="cb12-203"><a href="#cb12-203" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb12-204"><a href="#cb12-204" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span><span class="op">:</span> <span class="st">"Emigrazione per paese di destinazione (2000-2022)"</span><span class="op">,</span></span>
+<span id="cb12-205"><a href="#cb12-205" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> width<span class="op">,</span></span>
+<span id="cb12-206"><a href="#cb12-206" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span></span>
+<span id="cb12-207"><a href="#cb12-207" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Medici emigrati"</span><span class="op">,</span> <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span>}<span class="op">,</span></span>
+<span id="cb12-208"><a href="#cb12-208" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Anno"</span><span class="op">,</span> <span class="dt">tickFormat</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="bu">String</span>(d)}<span class="op">,</span></span>
+<span id="cb12-209"><a href="#cb12-209" aria-hidden="true" tabindex="-1"></a>  <span class="dt">color</span><span class="op">:</span> {<span class="dt">legend</span><span class="op">:</span> <span class="kw">true</span>}<span class="op">,</span></span>
+<span id="cb12-210"><a href="#cb12-210" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb12-211"><a href="#cb12-211" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(datiPaesiTempo<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"anno"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"valore"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"paese"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">2</span>})<span class="op">,</span></span>
+<span id="cb12-212"><a href="#cb12-212" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(datiPaesiTempo<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"anno"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"valore"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"paese"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">3</span><span class="op">,</span> <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span>})</span>
+<span id="cb12-213"><a href="#cb12-213" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb12-214"><a href="#cb12-214" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-12" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="i-flussi-di-immigrazione" class="level2">
+<h2 class="anchored" data-anchor-id="i-flussi-di-immigrazione">I flussi di immigrazione</h2>
+<p>L’immigrazione di medici verso l’Italia è un fenomeno meno noto ma significativo. Ogni anno arrivano in Italia tra 60 e 300 medici stranieri.</p>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb13" data-startfrom="225" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 224;"><span id="cb13-225"><a href="#cb13-225" aria-hidden="true" tabindex="-1"></a>totaleImmigrazione <span class="op">=</span> immigrazione<span class="op">.</span><span class="fu">map</span>(r <span class="kw">=&gt;</span> ({</span>
+<span id="cb13-226"><a href="#cb13-226" aria-hidden="true" tabindex="-1"></a>  <span class="dt">anno</span><span class="op">:</span> <span class="pp">parseInt</span>(r<span class="op">.</span><span class="at">Anno</span>)<span class="op">,</span></span>
+<span id="cb13-227"><a href="#cb13-227" aria-hidden="true" tabindex="-1"></a>  <span class="dt">totale</span><span class="op">:</span> <span class="pp">parseInt</span>(r<span class="op">.</span><span class="at">Totale</span>)</span>
+<span id="cb13-228"><a href="#cb13-228" aria-hidden="true" tabindex="-1"></a>}))<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">anno</span> <span class="op">&gt;=</span> <span class="dv">2000</span> <span class="op">&amp;&amp;</span> d<span class="op">.</span><span class="at">anno</span> <span class="op">&lt;=</span> <span class="dv">2022</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-13" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb14" data-startfrom="233" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 232;"><span id="cb14-233"><a href="#cb14-233" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb14-234"><a href="#cb14-234" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span><span class="op">:</span> <span class="st">"Medici immigrati in Italia per anno (flusso annuale)"</span><span class="op">,</span></span>
+<span id="cb14-235"><a href="#cb14-235" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> width<span class="op">,</span></span>
+<span id="cb14-236"><a href="#cb14-236" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span></span>
+<span id="cb14-237"><a href="#cb14-237" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Medici immigrati"</span><span class="op">,</span> <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">domain</span><span class="op">:</span> [<span class="dv">0</span><span class="op">,</span> <span class="dv">350</span>]}<span class="op">,</span></span>
+<span id="cb14-238"><a href="#cb14-238" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Anno"</span><span class="op">,</span> <span class="dt">tickFormat</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="bu">String</span>(d)}<span class="op">,</span></span>
+<span id="cb14-239"><a href="#cb14-239" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb14-240"><a href="#cb14-240" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(totaleImmigrazione<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"anno"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"totale"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#3973b9"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">3</span>})<span class="op">,</span></span>
+<span id="cb14-241"><a href="#cb14-241" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(totaleImmigrazione<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"anno"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"totale"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#3973b9"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span>})</span>
+<span id="cb14-242"><a href="#cb14-242" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb14-243"><a href="#cb14-243" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-14" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb15" data-startfrom="249" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 248;"><span id="cb15-249"><a href="#cb15-249" aria-hidden="true" tabindex="-1"></a>totImmigrati <span class="op">=</span> totaleImmigrazione<span class="op">.</span><span class="fu">reduce</span>((acc<span class="op">,</span> d) <span class="kw">=&gt;</span> acc <span class="op">+</span> d<span class="op">.</span><span class="at">totale</span><span class="op">,</span> <span class="dv">0</span>)</span>
+<span id="cb15-250"><a href="#cb15-250" aria-hidden="true" tabindex="-1"></a>mediaImmigrazione <span class="op">=</span> totImmigrati <span class="op">/</span> totaleImmigrazione<span class="op">.</span><span class="at">length</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-15-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-15-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb16" data-startfrom="254" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 253;"><span id="cb16-254"><a href="#cb16-254" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div class="card-grid"&gt;</span></span>
+<span id="cb16-255"><a href="#cb16-255" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;div class="card"&gt;</span></span>
+<span id="cb16-256"><a href="#cb16-256" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;h3&gt;Totale 2000-2022&lt;/h3&gt;</span></span>
+<span id="cb16-257"><a href="#cb16-257" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;p class="big"&gt;</span><span class="sc">${</span><span class="fu">fmt</span>(totImmigrati)<span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
+<span id="cb16-258"><a href="#cb16-258" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;p class="small muted"&gt;medici immigrati&lt;/p&gt;</span></span>
+<span id="cb16-259"><a href="#cb16-259" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;</span></span>
+<span id="cb16-260"><a href="#cb16-260" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;div class="card"&gt;</span></span>
+<span id="cb16-261"><a href="#cb16-261" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;h3&gt;Media annua&lt;/h3&gt;</span></span>
+<span id="cb16-262"><a href="#cb16-262" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;p class="big"&gt;</span><span class="sc">${</span><span class="fu">fmt</span>(mediaImmigrazione)<span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
+<span id="cb16-263"><a href="#cb16-263" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;p class="small muted"&gt;medici/anno&lt;/p&gt;</span></span>
+<span id="cb16-264"><a href="#cb16-264" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;</span></span>
+<span id="cb16-265"><a href="#cb16-265" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/div&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-16" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<section id="da-dove-vengono-i-medici-stranieri" class="level3">
+<h3 class="anchored" data-anchor-id="da-dove-vengono-i-medici-stranieri">Da dove vengono i medici stranieri?</h3>
+<p>Negli ultimi anni (2019-2022) i medici immigrati provengono principalmente dalla Romania, dalla Spagna, dall’Austria e dalla Bulgaria.</p>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb17" data-startfrom="274" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 273;"><span id="cb17-274"><a href="#cb17-274" aria-hidden="true" tabindex="-1"></a><span class="co">// Top paesi di origine (2019-2022)</span></span>
+<span id="cb17-275"><a href="#cb17-275" aria-hidden="true" tabindex="-1"></a>totaliOrigine <span class="op">=</span> immigrazioneDettaglio</span>
+<span id="cb17-276"><a href="#cb17-276" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">filter</span>(r <span class="kw">=&gt;</span> r<span class="op">.</span><span class="at">Country</span> <span class="op">!==</span> <span class="st">"Grand Total"</span> <span class="op">&amp;&amp;</span> r<span class="op">.</span><span class="at">Country</span> <span class="op">!==</span> <span class="st">"Others"</span>)</span>
+<span id="cb17-277"><a href="#cb17-277" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">map</span>(r <span class="kw">=&gt;</span> ({</span>
+<span id="cb17-278"><a href="#cb17-278" aria-hidden="true" tabindex="-1"></a>    <span class="dt">paese</span><span class="op">:</span> r<span class="op">.</span><span class="at">Country</span><span class="op">,</span></span>
+<span id="cb17-279"><a href="#cb17-279" aria-hidden="true" tabindex="-1"></a>    <span class="dt">totale</span><span class="op">:</span> <span class="fu">parseNumber</span>(r[<span class="st">"Grand Total"</span>])</span>
+<span id="cb17-280"><a href="#cb17-280" aria-hidden="true" tabindex="-1"></a>  }))</span>
+<span id="cb17-281"><a href="#cb17-281" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">totale</span> <span class="op">&gt;=</span> <span class="dv">10</span>)</span>
+<span id="cb17-282"><a href="#cb17-282" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">sort</span>((a<span class="op">,</span> b) <span class="kw">=&gt;</span> b<span class="op">.</span><span class="at">totale</span> <span class="op">-</span> a<span class="op">.</span><span class="at">totale</span>)</span>
+<span id="cb17-283"><a href="#cb17-283" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">slice</span>(<span class="dv">0</span><span class="op">,</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-17" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb18" data-startfrom="288" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 287;"><span id="cb18-288"><a href="#cb18-288" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb18-289"><a href="#cb18-289" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span><span class="op">:</span> <span class="st">"Principali paesi di origine dei medici immigrati (2019-2022)"</span><span class="op">,</span></span>
+<span id="cb18-290"><a href="#cb18-290" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> width<span class="op">,</span></span>
+<span id="cb18-291"><a href="#cb18-291" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span></span>
+<span id="cb18-292"><a href="#cb18-292" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">100</span><span class="op">,</span></span>
+<span id="cb18-293"><a href="#cb18-293" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Medici immigrati"</span><span class="op">,</span> <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span>}<span class="op">,</span></span>
+<span id="cb18-294"><a href="#cb18-294" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="kw">null</span>}<span class="op">,</span></span>
+<span id="cb18-295"><a href="#cb18-295" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb18-296"><a href="#cb18-296" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barX</span>(totaliOrigine<span class="op">,</span> {</span>
+<span id="cb18-297"><a href="#cb18-297" aria-hidden="true" tabindex="-1"></a>      <span class="dt">y</span><span class="op">:</span> <span class="st">"paese"</span><span class="op">,</span></span>
+<span id="cb18-298"><a href="#cb18-298" aria-hidden="true" tabindex="-1"></a>      <span class="dt">x</span><span class="op">:</span> <span class="st">"totale"</span><span class="op">,</span></span>
+<span id="cb18-299"><a href="#cb18-299" aria-hidden="true" tabindex="-1"></a>      <span class="dt">fill</span><span class="op">:</span> <span class="st">"#3973b9"</span><span class="op">,</span></span>
+<span id="cb18-300"><a href="#cb18-300" aria-hidden="true" tabindex="-1"></a>      <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb18-301"><a href="#cb18-301" aria-hidden="true" tabindex="-1"></a>      <span class="dt">sort</span><span class="op">:</span> {<span class="dt">y</span><span class="op">:</span> <span class="st">"-x"</span>}</span>
+<span id="cb18-302"><a href="#cb18-302" aria-hidden="true" tabindex="-1"></a>    })<span class="op">,</span></span>
+<span id="cb18-303"><a href="#cb18-303" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleX</span>([<span class="dv">0</span>])</span>
+<span id="cb18-304"><a href="#cb18-304" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb18-305"><a href="#cb18-305" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-18" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="il-saldo-migratorio-netto" class="level2">
+<h2 class="anchored" data-anchor-id="il-saldo-migratorio-netto">Il saldo migratorio netto</h2>
+<p>Il confronto tra emigrazione e immigrazione mostra un saldo costantemente negativo: l’Italia perde ogni anno più medici di quanti ne acquisisca.</p>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb19" data-startfrom="316" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 315;"><span id="cb19-316"><a href="#cb19-316" aria-hidden="true" tabindex="-1"></a>saldoMigratorio <span class="op">=</span> anni<span class="op">.</span><span class="fu">map</span>(anno <span class="kw">=&gt;</span> {</span>
+<span id="cb19-317"><a href="#cb19-317" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> emig <span class="op">=</span> totaleEmigrazione<span class="op">.</span><span class="fu">find</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">anno</span> <span class="op">===</span> anno)<span class="op">;</span></span>
+<span id="cb19-318"><a href="#cb19-318" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> immig <span class="op">=</span> totaleImmigrazione<span class="op">.</span><span class="fu">find</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">anno</span> <span class="op">===</span> anno)<span class="op">;</span></span>
+<span id="cb19-319"><a href="#cb19-319" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> {</span>
+<span id="cb19-320"><a href="#cb19-320" aria-hidden="true" tabindex="-1"></a>    <span class="dt">anno</span><span class="op">:</span> anno<span class="op">,</span></span>
+<span id="cb19-321"><a href="#cb19-321" aria-hidden="true" tabindex="-1"></a>    <span class="dt">emigrazione</span><span class="op">:</span> emig <span class="op">?</span> emig<span class="op">.</span><span class="at">totale</span> <span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb19-322"><a href="#cb19-322" aria-hidden="true" tabindex="-1"></a>    <span class="dt">immigrazione</span><span class="op">:</span> immig <span class="op">?</span> immig<span class="op">.</span><span class="at">totale</span> <span class="op">:</span> <span class="dv">0</span><span class="op">,</span></span>
+<span id="cb19-323"><a href="#cb19-323" aria-hidden="true" tabindex="-1"></a>    <span class="dt">saldo</span><span class="op">:</span> (immig <span class="op">?</span> immig<span class="op">.</span><span class="at">totale</span> <span class="op">:</span> <span class="dv">0</span>) <span class="op">-</span> (emig <span class="op">?</span> emig<span class="op">.</span><span class="at">totale</span> <span class="op">:</span> <span class="dv">0</span>)</span>
+<span id="cb19-324"><a href="#cb19-324" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb19-325"><a href="#cb19-325" aria-hidden="true" tabindex="-1"></a>})<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">emigrazione</span> <span class="op">&gt;</span> <span class="dv">0</span> <span class="op">||</span> d<span class="op">.</span><span class="at">immigrazione</span> <span class="op">&gt;</span> <span class="dv">0</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-19" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb20" data-startfrom="330" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 329;"><span id="cb20-330"><a href="#cb20-330" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb20-331"><a href="#cb20-331" aria-hidden="true" tabindex="-1"></a>  <span class="dt">title</span><span class="op">:</span> <span class="st">"Saldo migratorio netto dei medici (immigrazione - emigrazione)"</span><span class="op">,</span></span>
+<span id="cb20-332"><a href="#cb20-332" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> width<span class="op">,</span></span>
+<span id="cb20-333"><a href="#cb20-333" aria-hidden="true" tabindex="-1"></a>  <span class="dt">height</span><span class="op">:</span> <span class="dv">400</span><span class="op">,</span></span>
+<span id="cb20-334"><a href="#cb20-334" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Saldo netto"</span><span class="op">,</span> <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span>}<span class="op">,</span></span>
+<span id="cb20-335"><a href="#cb20-335" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> {<span class="dt">label</span><span class="op">:</span> <span class="st">"Anno"</span><span class="op">,</span> <span class="dt">tickFormat</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="bu">String</span>(d)}<span class="op">,</span></span>
+<span id="cb20-336"><a href="#cb20-336" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb20-337"><a href="#cb20-337" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>]<span class="op">,</span> {<span class="dt">stroke</span><span class="op">:</span> <span class="st">"#333"</span>})<span class="op">,</span></span>
+<span id="cb20-338"><a href="#cb20-338" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">line</span>(saldoMigratorio<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"anno"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"saldo"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#e83977"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">3</span>})<span class="op">,</span></span>
+<span id="cb20-339"><a href="#cb20-339" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">dot</span>(saldoMigratorio<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"anno"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"saldo"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">saldo</span> <span class="op">&gt;=</span> <span class="dv">0</span> <span class="op">?</span> <span class="st">"#3973b9"</span> <span class="op">:</span> <span class="st">"#e83977"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span>})<span class="op">,</span></span>
+<span id="cb20-340"><a href="#cb20-340" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">areaY</span>(saldoMigratorio<span class="op">,</span> {<span class="dt">x</span><span class="op">:</span> <span class="st">"anno"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"saldo"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#e83977"</span><span class="op">,</span> <span class="dt">fillOpacity</span><span class="op">:</span> <span class="fl">0.2</span>})</span>
+<span id="cb20-341"><a href="#cb20-341" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb20-342"><a href="#cb20-342" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-20" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb21" data-startfrom="348" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 347;"><span id="cb21-348"><a href="#cb21-348" aria-hidden="true" tabindex="-1"></a>saldoTotale <span class="op">=</span> saldoMigratorio<span class="op">.</span><span class="fu">reduce</span>((acc<span class="op">,</span> d) <span class="kw">=&gt;</span> acc <span class="op">+</span> d<span class="op">.</span><span class="at">saldo</span><span class="op">,</span> <span class="dv">0</span>)</span>
+<span id="cb21-349"><a href="#cb21-349" aria-hidden="true" tabindex="-1"></a>saldoMedio <span class="op">=</span> saldoTotale <span class="op">/</span> saldoMigratorio<span class="op">.</span><span class="at">length</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-21-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-21-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb22" data-startfrom="353" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 352;"><span id="cb22-353"><a href="#cb22-353" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div class="card-grid"&gt;</span></span>
+<span id="cb22-354"><a href="#cb22-354" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;div class="card"&gt;</span></span>
+<span id="cb22-355"><a href="#cb22-355" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;h3&gt;Saldo totale 2000-2022&lt;/h3&gt;</span></span>
+<span id="cb22-356"><a href="#cb22-356" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;p class="big" style="color: #e83977;"&gt;</span><span class="sc">${</span><span class="fu">fmt</span>(saldoTotale)<span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
+<span id="cb22-357"><a href="#cb22-357" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;p class="small muted"&gt;medici persi&lt;/p&gt;</span></span>
+<span id="cb22-358"><a href="#cb22-358" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;</span></span>
+<span id="cb22-359"><a href="#cb22-359" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;div class="card"&gt;</span></span>
+<span id="cb22-360"><a href="#cb22-360" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;h3&gt;Saldo medio annuo&lt;/h3&gt;</span></span>
+<span id="cb22-361"><a href="#cb22-361" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;p class="big" style="color: #e83977;"&gt;</span><span class="sc">${</span><span class="fu">fmt</span>(saldoMedio)<span class="sc">}</span><span class="vs">&lt;/p&gt;</span></span>
+<span id="cb22-362"><a href="#cb22-362" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;p class="small muted"&gt;medici/anno&lt;/p&gt;</span></span>
+<span id="cb22-363"><a href="#cb22-363" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;</span></span>
+<span id="cb22-364"><a href="#cb22-364" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/div&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-22" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb23" data-startfrom="369" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 368;"><span id="cb23-369"><a href="#cb23-369" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div class="callout-tip"&gt;</span></span>
+<span id="cb23-370"><a href="#cb23-370" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;strong&gt;Cosa emerge:&lt;/strong&gt; L'Italia perde mediamente circa </span><span class="sc">${</span><span class="fu">fmt</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(saldoMedio))<span class="sc">}</span><span class="vs"> medici all'anno per effetto della migrazione netta. In 23 anni, il saldo cumulato è di circa </span><span class="sc">${</span><span class="fu">fmt</span>(<span class="bu">Math</span><span class="op">.</span><span class="fu">abs</span>(saldoTotale))<span class="sc">}</span><span class="vs"> medici — un numero significativo ma molto inferiore alle cifre "stock" che circolano nel dibattito pubblico. Questa perdita, pur rilevante, rappresenta circa lo 0.2% della forza lavoro medica italiana ogni anno.</span></span>
+<span id="cb23-371"><a href="#cb23-371" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/div&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-23" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="come-interpretare-i-dati" class="level2">
+<h2 class="anchored" data-anchor-id="come-interpretare-i-dati">Come interpretare i dati</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+I numeri giusti da usare
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Flusso annuale di emigrazione</strong>: circa 800-1.000 medici/anno negli ultimi anni</li>
+<li><strong>Flusso annuale di immigrazione</strong>: circa 250-300 medici/anno negli ultimi anni</li>
+<li><strong>Saldo netto annuale</strong>: circa -500/-700 medici/anno</li>
+<li><strong>Saldo cumulato 2000-2022</strong>: circa -16.000 medici</li>
+</ul>
+<p>Questi sono i numeri corretti da usare nelle analisi e nel dibattito pubblico.</p>
+</div>
+</div>
+<section id="cosa-non-fare" class="level3">
+<h3 class="anchored" data-anchor-id="cosa-non-fare">Cosa NON fare</h3>
+<ol type="1">
+<li><p><strong>Non sommare gli stock di paesi diversi</strong>: Ogni paese conta i medici “italiani” con criteri diversi (cittadinanza, luogo di formazione, luogo di nascita).</p></li>
+<li><p><strong>Non confondere cittadinanza con emigrazione</strong>: Molti “medici italiani all’estero” sono cittadini di altri paesi con passaporto italiano, non emigrati dall’Italia.</p></li>
+<li><p><strong>Non sommare flussi di anni diversi come se fossero stock</strong>: Un medico emigrato nel 2005 e rientrato nel 2010 verrebbe contato due volte.</p></li>
+<li><p><strong>Non ignorare i rientri</strong>: Molti medici emigrano per periodi limitati (specializzazione, esperienze formative) e poi rientrano.</p></li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="fonti-dei-dati" class="level2">
+<h2 class="anchored" data-anchor-id="fonti-dei-dati">Fonti dei dati</h2>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb24" data-startfrom="405" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 404;"><span id="cb24-405"><a href="#cb24-405" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;div class="card-grid cols-2"&gt;</span></span>
+<span id="cb24-406"><a href="#cb24-406" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;div class="card"&gt;</span></span>
+<span id="cb24-407"><a href="#cb24-407" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;h3&gt;Emigrazione&lt;/h3&gt;</span></span>
+<span id="cb24-408"><a href="#cb24-408" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;ul&gt;</span></span>
+<span id="cb24-409"><a href="#cb24-409" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;li&gt;OECD Health Statistics - Health Workforce Migration&lt;/li&gt;</span></span>
+<span id="cb24-410"><a href="#cb24-410" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;li&gt;Dati sui flussi annuali per paese di destinazione&lt;/li&gt;</span></span>
+<span id="cb24-411"><a href="#cb24-411" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/ul&gt;</span></span>
+<span id="cb24-412"><a href="#cb24-412" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;</span></span>
+<span id="cb24-413"><a href="#cb24-413" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;div class="card"&gt;</span></span>
+<span id="cb24-414"><a href="#cb24-414" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;h3&gt;Immigrazione&lt;/h3&gt;</span></span>
+<span id="cb24-415"><a href="#cb24-415" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;ul&gt;</span></span>
+<span id="cb24-416"><a href="#cb24-416" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;li&gt;OECD Health Statistics - Health Workforce Migration&lt;/li&gt;</span></span>
+<span id="cb24-417"><a href="#cb24-417" aria-hidden="true" tabindex="-1"></a><span class="vs">      &lt;li&gt;Dati sui flussi annuali per paese di origine&lt;/li&gt;</span></span>
+<span id="cb24-418"><a href="#cb24-418" aria-hidden="true" tabindex="-1"></a><span class="vs">    &lt;/ul&gt;</span></span>
+<span id="cb24-419"><a href="#cb24-419" aria-hidden="true" tabindex="-1"></a><span class="vs">  &lt;/div&gt;</span></span>
+<span id="cb24-420"><a href="#cb24-420" aria-hidden="true" tabindex="-1"></a><span class="vs">&lt;/div&gt;`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-24" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<hr>
+</section>
+<section id="metodologia" class="level2">
+<h2 class="anchored" data-anchor-id="metodologia">Metodologia</h2>
+<p>I dati presentati in questa analisi provengono dalle statistiche OECD sulla migrazione del personale sanitario. Si tratta di <strong>dati sui flussi</strong> (numero di medici che si trasferiscono ogni anno), non di dati sugli stock (numero totale di medici presenti in un paese).</p>
+<p>I dati OECD hanno alcune limitazioni: - Non tutti i paesi riportano dati completi per tutti gli anni - Le definizioni di “medico” e “italiano” possono variare tra paesi - I rientri non sono sempre tracciati separatamente</p>
+<p>Nonostante queste limitazioni, i dati OECD rappresentano la fonte più affidabile e metodologicamente corretta per analizzare i flussi migratori dei medici a livello internazionale.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Imh0bWxgPGRpdiBjbGFzcz1cImhlcm8tYm94XCI+XG4gIDxoMiBzdHlsZT1cImNvbG9yOiB3aGl0ZTsgbWFyZ2luOiAwO1wiPkxhIGRvbWFuZGEgY2hpYXZlPC9oMj5cbiAgPHAgc3R5bGU9XCJmb250LXNpemU6IDEuMmVtOyBtYXJnaW46IDFyZW0gMCAwIDA7XCI+XG4gICAgUXVhbnRpIG1lZGljaSBpdGFsaWFuaSBlbWlncmFubyBkYXZ2ZXJvIG9nbmkgYW5ubz8gRSBxdWFudGkgbmUgYXJyaXZhbm8gZGFsbCdlc3Rlcm8/XG4gICAgSSBudW1lcmkgY2hlIGNpcmNvbGFubyBuZWwgZGliYXR0aXRvIHB1YmJsaWNvIHNvbm8gc3Blc3NvIGNvbmZ1c2ksIGdvbmZpYXRpIG8gbWFsIGludGVycHJldGF0aS5cbiAgPC9wPlxuPC9kaXY+YFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLy8gQ2FyaWNhbWVudG8gZGF0aVxuZW1pZ3JhemlvbmUgPSBGaWxlQXR0YWNobWVudChcIi4uL2RhdGEvbWlncmF6aW9uZS9lbWlncmF6aW9uZS5jc3ZcIikuY3N2KClcbmltbWlncmF6aW9uZSA9IEZpbGVBdHRhY2htZW50KFwiLi4vZGF0YS9taWdyYXppb25lL2ltbWlncmF6aW9uZS5jc3ZcIikuY3N2KClcbmltbWlncmF6aW9uZURldHRhZ2xpbyA9IEZpbGVBdHRhY2htZW50KFwiLi4vZGF0YS9taWdyYXppb25lL2ltbWlncmF6aW9uZS1kZXR0YWdsaW8uY3N2XCIpLmNzdigpXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLyBGdW56aW9uaSBkaSBwYXJzaW5nXG5mdW5jdGlvbiBwYXJzZU51bWJlcihzdHIpIHtcbiAgaWYgKCFzdHIgfHwgc3RyID09PSBcIlwiKSByZXR1cm4gMDtcbiAgcmV0dXJuIHBhcnNlRmxvYXQoc3RyLnJlcGxhY2UoLywvZywgXCJcIikucmVwbGFjZSgvJS9nLCBcIlwiKSk7XG59XG5cbmZ1bmN0aW9uIGZtdChuKSB7XG4gIHJldHVybiBNYXRoLnJvdW5kKG4pLnRvTG9jYWxlU3RyaW5nKFwiaXQtSVRcIik7XG59XG5cbmFubmkgPSB7XG4gIGNvbnN0IGFyciA9IFtdO1xuICBmb3IgKGxldCB5ID0gMjAwMDsgeSA8PSAyMDIyOyB5KyspIGFyci5wdXNoKHkpO1xuICByZXR1cm4gYXJyO1xufVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC00IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLy8gRXN0cmFpIGlsIHRvdGFsZSBhbm51YWxlIGRhbGwndWx0aW1hIHJpZ2FcbnRvdGFsZUVtaWdyYXppb25lID0gYW5uaS5tYXAoYW5ubyA9PiB7XG4gIGNvbnN0IHJvdyA9IGVtaWdyYXppb25lLmZpbmQociA9PiByLkNvdW50cnkgPT09IFwiR3JhbmQgVG90YWxcIik7XG4gIHJldHVybiB7XG4gICAgYW5ubzogYW5ubyxcbiAgICB0b3RhbGU6IHJvdyA/IHBhcnNlTnVtYmVyKHJvd1thbm5vXSkgOiAwXG4gIH07XG59KS5maWx0ZXIoZCA9PiBkLnRvdGFsZSA+IDApXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTUiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJQbG90LnBsb3Qoe1xuICB0aXRsZTogXCJNZWRpY2kgZW1pZ3JhdGkgZGFsbCdJdGFsaWEgcGVyIGFubm8gKGZsdXNzbyBhbm51YWxlKVwiLFxuICB3aWR0aDogd2lkdGgsXG4gIGhlaWdodDogNDAwLFxuICB5OiB7bGFiZWw6IFwiTWVkaWNpIGVtaWdyYXRpXCIsIGdyaWQ6IHRydWUsIGRvbWFpbjogWzAsIDE4MDBdfSxcbiAgeDoge2xhYmVsOiBcIkFubm9cIiwgdGlja0Zvcm1hdDogZCA9PiBTdHJpbmcoZCl9LFxuICBtYXJrczogW1xuICAgIFBsb3QucnVsZVkoWzEwMDBdLCB7c3Ryb2tlOiBcIiNjY2NcIiwgc3Ryb2tlRGFzaGFycmF5OiBcIjQsNFwifSksXG4gICAgUGxvdC5saW5lKHRvdGFsZUVtaWdyYXppb25lLCB7eDogXCJhbm5vXCIsIHk6IFwidG90YWxlXCIsIHN0cm9rZTogXCIjZTgzOTc3XCIsIHN0cm9rZVdpZHRoOiAzfSksXG4gICAgUGxvdC5kb3QodG90YWxlRW1pZ3JhemlvbmUsIHt4OiBcImFubm9cIiwgeTogXCJ0b3RhbGVcIiwgZmlsbDogXCIjZTgzOTc3XCIsIHI6IDUsIHRpcDogdHJ1ZX0pXG4gIF1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTYiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ0b3RFbWlncmF0aSA9IHRvdGFsZUVtaWdyYXppb25lLnJlZHVjZSgoYWNjLCBkKSA9PiBhY2MgKyBkLnRvdGFsZSwgMClcbm1lZGlhQW5udWEgPSB0b3RFbWlncmF0aSAvIHRvdGFsZUVtaWdyYXppb25lLmxlbmd0aFxucGljY29Bbm5vID0gdG90YWxlRW1pZ3JhemlvbmUucmVkdWNlKChtYXgsIGQpID0+IGQudG90YWxlID4gbWF4LnRvdGFsZSA/IGQgOiBtYXgsIHt0b3RhbGU6IDB9KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC03IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiaHRtbGA8ZGl2IGNsYXNzPVwiY2FyZC1ncmlkXCI+XG4gIDxkaXYgY2xhc3M9XCJjYXJkXCI+XG4gICAgPGgzPlRvdGFsZSAyMDAwLTIwMjI8L2gzPlxuICAgIDxwIGNsYXNzPVwiYmlnXCI+JHtmbXQodG90RW1pZ3JhdGkpfTwvcD5cbiAgICA8cCBjbGFzcz1cInNtYWxsIG11dGVkXCI+bWVkaWNpIGVtaWdyYXRpPC9wPlxuICA8L2Rpdj5cbiAgPGRpdiBjbGFzcz1cImNhcmRcIj5cbiAgICA8aDM+TWVkaWEgYW5udWE8L2gzPlxuICAgIDxwIGNsYXNzPVwiYmlnXCI+JHtmbXQobWVkaWFBbm51YSl9PC9wPlxuICAgIDxwIGNsYXNzPVwic21hbGwgbXV0ZWRcIj5tZWRpY2kvYW5ubzwvcD5cbiAgPC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJjYXJkIGhpZ2hsaWdodFwiPlxuICAgIDxoMz5Bbm5vIGRpIHBpY2NvPC9oMz5cbiAgICA8cCBjbGFzcz1cImJpZ1wiPiR7cGljY29Bbm5vLmFubm99PC9wPlxuICAgIDxwIGNsYXNzPVwic21hbGwgbXV0ZWRcIj4ke2ZtdChwaWNjb0Fubm8udG90YWxlKX0gbWVkaWNpPC9wPlxuICA8L2Rpdj5cbjwvZGl2PmBcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtOCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vIENhbGNvbGEgdG90YWxpIHBlciBwYWVzZSAoZXNjbHVzbyBHcmFuZCBUb3RhbClcbnRvdGFsaVBlclBhZXNlID0gZW1pZ3JhemlvbmVcbiAgLmZpbHRlcihyID0+IHIuQ291bnRyeSAhPT0gXCJHcmFuZCBUb3RhbFwiICYmIHIuQ291bnRyeSAhPT0gXCJUdXJjaGlhXCIpXG4gIC5tYXAociA9PiAoe1xuICAgIHBhZXNlOiByLkNvdW50cnksXG4gICAgdG90YWxlOiBwYXJzZU51bWJlcihyW1wiR3JhbmQgVG90YWxcIl0pXG4gIH0pKVxuICAuZmlsdGVyKGQgPT4gZC50b3RhbGUgPiAxMDApXG4gIC5zb3J0KChhLCBiKSA9PiBiLnRvdGFsZSAtIGEudG90YWxlKVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC05IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiUGxvdC5wbG90KHtcbiAgdGl0bGU6IFwiUHJpbmNpcGFsaSBwYWVzaSBkaSBkZXN0aW5hemlvbmUgKDIwMDAtMjAyMilcIixcbiAgd2lkdGg6IHdpZHRoLFxuICBoZWlnaHQ6IDQ1MCxcbiAgbWFyZ2luTGVmdDogMTIwLFxuICB4OiB7bGFiZWw6IFwiTWVkaWNpIGVtaWdyYXRpICh0b3RhbGUgcGVyaW9kbylcIiwgZ3JpZDogdHJ1ZX0sXG4gIHk6IHtsYWJlbDogbnVsbH0sXG4gIG1hcmtzOiBbXG4gICAgUGxvdC5iYXJYKHRvdGFsaVBlclBhZXNlLCB7XG4gICAgICB5OiBcInBhZXNlXCIsXG4gICAgICB4OiBcInRvdGFsZVwiLFxuICAgICAgZmlsbDogXCIjMzk3M2I5XCIsXG4gICAgICB0aXA6IHRydWUsXG4gICAgICBzb3J0OiB7eTogXCIteFwifVxuICAgIH0pLFxuICAgIFBsb3QucnVsZVgoWzBdKVxuICBdXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xMCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Imh0bWxgPGRpdiBjbGFzcz1cImNhbGxvdXQtdGlwXCI+XG4gIDxzdHJvbmc+Q29zYSBlbWVyZ2U6PC9zdHJvbmc+IElsIFJlZ25vIFVuaXRvIMOoIHN0YXRvIHN0b3JpY2FtZW50ZSBsYSBwcmltYSBkZXN0aW5hemlvbmUgKCR7Zm10KHRvdGFsaVBlclBhZXNlLmZpbmQoZCA9PiBkLnBhZXNlID09PSBcIlVuaXRlZCBLaW5nZG9tXCIpPy50b3RhbGUgfHwgMCl9IG1lZGljaSBpbiAyMyBhbm5pKSwgc2VndWl0byBkYSBTdml6emVyYSAoJHtmbXQodG90YWxpUGVyUGFlc2UuZmluZChkID0+IGQucGFlc2UgPT09IFwiU3dpdHplcmxhbmRcIik/LnRvdGFsZSB8fCAwKX0pIGUgR2VybWFuaWEgKCR7Zm10KHRvdGFsaVBlclBhZXNlLmZpbmQoZCA9PiBkLnBhZXNlID09PSBcIkdlcm1hbnlcIik/LnRvdGFsZSB8fCAwKX0pLiBJc3JhZWxlLCBub25vc3RhbnRlIGkgbnVtZXJpIFwic3RvY2tcIiBnb25maWF0aSwgaGEgcmljZXZ1dG8gc29sbyAke2ZtdCh0b3RhbGlQZXJQYWVzZS5maW5kKGQgPT4gZC5wYWVzZSA9PT0gXCJJc3JhZWxcIik/LnRvdGFsZSB8fCAwKX0gbWVkaWNpIGl0YWxpYW5pIGluIDIzIGFubmkg4oCUIGNpcmNhIDQ1IGFsbCdhbm5vLlxuPC9kaXY+YFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vIERhdGkgcGVyIGkgcHJpbmNpcGFsaSBwYWVzaSBuZWwgdGVtcG9cbnBhZXNpUHJpbmNpcGFsaSA9IFtcIlVuaXRlZCBLaW5nZG9tXCIsIFwiU3dpdHplcmxhbmRcIiwgXCJHZXJtYW55XCIsIFwiRnJhbmNlXCIsIFwiQmVsZ2l1bVwiLCBcIlNwYWluXCJdXG5cbmRhdGlQYWVzaVRlbXBvID0gcGFlc2lQcmluY2lwYWxpLmZsYXRNYXAocGFlc2UgPT4ge1xuICBjb25zdCByb3cgPSBlbWlncmF6aW9uZS5maW5kKHIgPT4gci5Db3VudHJ5ID09PSBwYWVzZSk7XG4gIGlmICghcm93KSByZXR1cm4gW107XG4gIHJldHVybiBhbm5pLm1hcChhbm5vID0+ICh7XG4gICAgYW5ubzogYW5ubyxcbiAgICBwYWVzZTogcGFlc2UsXG4gICAgdmFsb3JlOiBwYXJzZU51bWJlcihyb3dbYW5ub10pXG4gIH0pKS5maWx0ZXIoZCA9PiBkLnZhbG9yZSA+IDApO1xufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJQbG90LnBsb3Qoe1xuICB0aXRsZTogXCJFbWlncmF6aW9uZSBwZXIgcGFlc2UgZGkgZGVzdGluYXppb25lICgyMDAwLTIwMjIpXCIsXG4gIHdpZHRoOiB3aWR0aCxcbiAgaGVpZ2h0OiA0MDAsXG4gIHk6IHtsYWJlbDogXCJNZWRpY2kgZW1pZ3JhdGlcIiwgZ3JpZDogdHJ1ZX0sXG4gIHg6IHtsYWJlbDogXCJBbm5vXCIsIHRpY2tGb3JtYXQ6IGQgPT4gU3RyaW5nKGQpfSxcbiAgY29sb3I6IHtsZWdlbmQ6IHRydWV9LFxuICBtYXJrczogW1xuICAgIFBsb3QubGluZShkYXRpUGFlc2lUZW1wbywge3g6IFwiYW5ub1wiLCB5OiBcInZhbG9yZVwiLCBzdHJva2U6IFwicGFlc2VcIiwgc3Ryb2tlV2lkdGg6IDJ9KSxcbiAgICBQbG90LmRvdChkYXRpUGFlc2lUZW1wbywge3g6IFwiYW5ub1wiLCB5OiBcInZhbG9yZVwiLCBmaWxsOiBcInBhZXNlXCIsIHI6IDMsIHRpcDogdHJ1ZX0pXG4gIF1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTEzIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidG90YWxlSW1taWdyYXppb25lID0gaW1taWdyYXppb25lLm1hcChyID0+ICh7XG4gIGFubm86IHBhcnNlSW50KHIuQW5ubyksXG4gIHRvdGFsZTogcGFyc2VJbnQoci5Ub3RhbGUpXG59KSkuZmlsdGVyKGQgPT4gZC5hbm5vID49IDIwMDAgJiYgZC5hbm5vIDw9IDIwMjIpXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTE0IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiUGxvdC5wbG90KHtcbiAgdGl0bGU6IFwiTWVkaWNpIGltbWlncmF0aSBpbiBJdGFsaWEgcGVyIGFubm8gKGZsdXNzbyBhbm51YWxlKVwiLFxuICB3aWR0aDogd2lkdGgsXG4gIGhlaWdodDogNDAwLFxuICB5OiB7bGFiZWw6IFwiTWVkaWNpIGltbWlncmF0aVwiLCBncmlkOiB0cnVlLCBkb21haW46IFswLCAzNTBdfSxcbiAgeDoge2xhYmVsOiBcIkFubm9cIiwgdGlja0Zvcm1hdDogZCA9PiBTdHJpbmcoZCl9LFxuICBtYXJrczogW1xuICAgIFBsb3QubGluZSh0b3RhbGVJbW1pZ3JhemlvbmUsIHt4OiBcImFubm9cIiwgeTogXCJ0b3RhbGVcIiwgc3Ryb2tlOiBcIiMzOTczYjlcIiwgc3Ryb2tlV2lkdGg6IDN9KSxcbiAgICBQbG90LmRvdCh0b3RhbGVJbW1pZ3JhemlvbmUsIHt4OiBcImFubm9cIiwgeTogXCJ0b3RhbGVcIiwgZmlsbDogXCIjMzk3M2I5XCIsIHI6IDUsIHRpcDogdHJ1ZX0pXG4gIF1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTE1IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidG90SW1taWdyYXRpID0gdG90YWxlSW1taWdyYXppb25lLnJlZHVjZSgoYWNjLCBkKSA9PiBhY2MgKyBkLnRvdGFsZSwgMClcbm1lZGlhSW1taWdyYXppb25lID0gdG90SW1taWdyYXRpIC8gdG90YWxlSW1taWdyYXppb25lLmxlbmd0aFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xNiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Imh0bWxgPGRpdiBjbGFzcz1cImNhcmQtZ3JpZFwiPlxuICA8ZGl2IGNsYXNzPVwiY2FyZFwiPlxuICAgIDxoMz5Ub3RhbGUgMjAwMC0yMDIyPC9oMz5cbiAgICA8cCBjbGFzcz1cImJpZ1wiPiR7Zm10KHRvdEltbWlncmF0aSl9PC9wPlxuICAgIDxwIGNsYXNzPVwic21hbGwgbXV0ZWRcIj5tZWRpY2kgaW1taWdyYXRpPC9wPlxuICA8L2Rpdj5cbiAgPGRpdiBjbGFzcz1cImNhcmRcIj5cbiAgICA8aDM+TWVkaWEgYW5udWE8L2gzPlxuICAgIDxwIGNsYXNzPVwiYmlnXCI+JHtmbXQobWVkaWFJbW1pZ3JhemlvbmUpfTwvcD5cbiAgICA8cCBjbGFzcz1cInNtYWxsIG11dGVkXCI+bWVkaWNpL2Fubm88L3A+XG4gIDwvZGl2PlxuPC9kaXY+YFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xNyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vIFRvcCBwYWVzaSBkaSBvcmlnaW5lICgyMDE5LTIwMjIpXG50b3RhbGlPcmlnaW5lID0gaW1taWdyYXppb25lRGV0dGFnbGlvXG4gIC5maWx0ZXIociA9PiByLkNvdW50cnkgIT09IFwiR3JhbmQgVG90YWxcIiAmJiByLkNvdW50cnkgIT09IFwiT3RoZXJzXCIpXG4gIC5tYXAociA9PiAoe1xuICAgIHBhZXNlOiByLkNvdW50cnksXG4gICAgdG90YWxlOiBwYXJzZU51bWJlcihyW1wiR3JhbmQgVG90YWxcIl0pXG4gIH0pKVxuICAuZmlsdGVyKGQgPT4gZC50b3RhbGUgPj0gMTApXG4gIC5zb3J0KChhLCBiKSA9PiBiLnRvdGFsZSAtIGEudG90YWxlKVxuICAuc2xpY2UoMCwgMTUpXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTE4IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiUGxvdC5wbG90KHtcbiAgdGl0bGU6IFwiUHJpbmNpcGFsaSBwYWVzaSBkaSBvcmlnaW5lIGRlaSBtZWRpY2kgaW1taWdyYXRpICgyMDE5LTIwMjIpXCIsXG4gIHdpZHRoOiB3aWR0aCxcbiAgaGVpZ2h0OiA0MDAsXG4gIG1hcmdpbkxlZnQ6IDEwMCxcbiAgeDoge2xhYmVsOiBcIk1lZGljaSBpbW1pZ3JhdGlcIiwgZ3JpZDogdHJ1ZX0sXG4gIHk6IHtsYWJlbDogbnVsbH0sXG4gIG1hcmtzOiBbXG4gICAgUGxvdC5iYXJYKHRvdGFsaU9yaWdpbmUsIHtcbiAgICAgIHk6IFwicGFlc2VcIixcbiAgICAgIHg6IFwidG90YWxlXCIsXG4gICAgICBmaWxsOiBcIiMzOTczYjlcIixcbiAgICAgIHRpcDogdHJ1ZSxcbiAgICAgIHNvcnQ6IHt5OiBcIi14XCJ9XG4gICAgfSksXG4gICAgUGxvdC5ydWxlWChbMF0pXG4gIF1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTE5IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoic2FsZG9NaWdyYXRvcmlvID0gYW5uaS5tYXAoYW5ubyA9PiB7XG4gIGNvbnN0IGVtaWcgPSB0b3RhbGVFbWlncmF6aW9uZS5maW5kKGQgPT4gZC5hbm5vID09PSBhbm5vKTtcbiAgY29uc3QgaW1taWcgPSB0b3RhbGVJbW1pZ3JhemlvbmUuZmluZChkID0+IGQuYW5ubyA9PT0gYW5ubyk7XG4gIHJldHVybiB7XG4gICAgYW5ubzogYW5ubyxcbiAgICBlbWlncmF6aW9uZTogZW1pZyA/IGVtaWcudG90YWxlIDogMCxcbiAgICBpbW1pZ3JhemlvbmU6IGltbWlnID8gaW1taWcudG90YWxlIDogMCxcbiAgICBzYWxkbzogKGltbWlnID8gaW1taWcudG90YWxlIDogMCkgLSAoZW1pZyA/IGVtaWcudG90YWxlIDogMClcbiAgfTtcbn0pLmZpbHRlcihkID0+IGQuZW1pZ3JhemlvbmUgPiAwIHx8IGQuaW1taWdyYXppb25lID4gMClcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMjAiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJQbG90LnBsb3Qoe1xuICB0aXRsZTogXCJTYWxkbyBtaWdyYXRvcmlvIG5ldHRvIGRlaSBtZWRpY2kgKGltbWlncmF6aW9uZSAtIGVtaWdyYXppb25lKVwiLFxuICB3aWR0aDogd2lkdGgsXG4gIGhlaWdodDogNDAwLFxuICB5OiB7bGFiZWw6IFwiU2FsZG8gbmV0dG9cIiwgZ3JpZDogdHJ1ZX0sXG4gIHg6IHtsYWJlbDogXCJBbm5vXCIsIHRpY2tGb3JtYXQ6IGQgPT4gU3RyaW5nKGQpfSxcbiAgbWFya3M6IFtcbiAgICBQbG90LnJ1bGVZKFswXSwge3N0cm9rZTogXCIjMzMzXCJ9KSxcbiAgICBQbG90LmxpbmUoc2FsZG9NaWdyYXRvcmlvLCB7eDogXCJhbm5vXCIsIHk6IFwic2FsZG9cIiwgc3Ryb2tlOiBcIiNlODM5NzdcIiwgc3Ryb2tlV2lkdGg6IDN9KSxcbiAgICBQbG90LmRvdChzYWxkb01pZ3JhdG9yaW8sIHt4OiBcImFubm9cIiwgeTogXCJzYWxkb1wiLCBmaWxsOiBkID0+IGQuc2FsZG8gPj0gMCA/IFwiIzM5NzNiOVwiIDogXCIjZTgzOTc3XCIsIHI6IDUsIHRpcDogdHJ1ZX0pLFxuICAgIFBsb3QuYXJlYVkoc2FsZG9NaWdyYXRvcmlvLCB7eDogXCJhbm5vXCIsIHk6IFwic2FsZG9cIiwgZmlsbDogXCIjZTgzOTc3XCIsIGZpbGxPcGFjaXR5OiAwLjJ9KVxuICBdXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InNhbGRvVG90YWxlID0gc2FsZG9NaWdyYXRvcmlvLnJlZHVjZSgoYWNjLCBkKSA9PiBhY2MgKyBkLnNhbGRvLCAwKVxuc2FsZG9NZWRpbyA9IHNhbGRvVG90YWxlIC8gc2FsZG9NaWdyYXRvcmlvLmxlbmd0aFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Imh0bWxgPGRpdiBjbGFzcz1cImNhcmQtZ3JpZFwiPlxuICA8ZGl2IGNsYXNzPVwiY2FyZFwiPlxuICAgIDxoMz5TYWxkbyB0b3RhbGUgMjAwMC0yMDIyPC9oMz5cbiAgICA8cCBjbGFzcz1cImJpZ1wiIHN0eWxlPVwiY29sb3I6ICNlODM5Nzc7XCI+JHtmbXQoc2FsZG9Ub3RhbGUpfTwvcD5cbiAgICA8cCBjbGFzcz1cInNtYWxsIG11dGVkXCI+bWVkaWNpIHBlcnNpPC9wPlxuICA8L2Rpdj5cbiAgPGRpdiBjbGFzcz1cImNhcmRcIj5cbiAgICA8aDM+U2FsZG8gbWVkaW8gYW5udW88L2gzPlxuICAgIDxwIGNsYXNzPVwiYmlnXCIgc3R5bGU9XCJjb2xvcjogI2U4Mzk3NztcIj4ke2ZtdChzYWxkb01lZGlvKX08L3A+XG4gICAgPHAgY2xhc3M9XCJzbWFsbCBtdXRlZFwiPm1lZGljaS9hbm5vPC9wPlxuICA8L2Rpdj5cbjwvZGl2PmBcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMjMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJodG1sYDxkaXYgY2xhc3M9XCJjYWxsb3V0LXRpcFwiPlxuICA8c3Ryb25nPkNvc2EgZW1lcmdlOjwvc3Ryb25nPiBMJ0l0YWxpYSBwZXJkZSBtZWRpYW1lbnRlIGNpcmNhICR7Zm10KE1hdGguYWJzKHNhbGRvTWVkaW8pKX0gbWVkaWNpIGFsbCdhbm5vIHBlciBlZmZldHRvIGRlbGxhIG1pZ3JhemlvbmUgbmV0dGEuIEluIDIzIGFubmksIGlsIHNhbGRvIGN1bXVsYXRvIMOoIGRpIGNpcmNhICR7Zm10KE1hdGguYWJzKHNhbGRvVG90YWxlKSl9IG1lZGljaSDigJQgdW4gbnVtZXJvIHNpZ25pZmljYXRpdm8gbWEgbW9sdG8gaW5mZXJpb3JlIGFsbGUgY2lmcmUgXCJzdG9ja1wiIGNoZSBjaXJjb2xhbm8gbmVsIGRpYmF0dGl0byBwdWJibGljby4gUXVlc3RhIHBlcmRpdGEsIHB1ciByaWxldmFudGUsIHJhcHByZXNlbnRhIGNpcmNhIGxvIDAuMiUgZGVsbGEgZm9yemEgbGF2b3JvIG1lZGljYSBpdGFsaWFuYSBvZ25pIGFubm8uXG48L2Rpdj5gXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTI0IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiaHRtbGA8ZGl2IGNsYXNzPVwiY2FyZC1ncmlkIGNvbHMtMlwiPlxuICA8ZGl2IGNsYXNzPVwiY2FyZFwiPlxuICAgIDxoMz5FbWlncmF6aW9uZTwvaDM+XG4gICAgPHVsPlxuICAgICAgPGxpPk9FQ0QgSGVhbHRoIFN0YXRpc3RpY3MgLSBIZWFsdGggV29ya2ZvcmNlIE1pZ3JhdGlvbjwvbGk+XG4gICAgICA8bGk+RGF0aSBzdWkgZmx1c3NpIGFubnVhbGkgcGVyIHBhZXNlIGRpIGRlc3RpbmF6aW9uZTwvbGk+XG4gICAgPC91bD5cbiAgPC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJjYXJkXCI+XG4gICAgPGgzPkltbWlncmF6aW9uZTwvaDM+XG4gICAgPHVsPlxuICAgICAgPGxpPk9FQ0QgSGVhbHRoIFN0YXRpc3RpY3MgLSBIZWFsdGggV29ya2ZvcmNlIE1pZ3JhdGlvbjwvbGk+XG4gICAgICA8bGk+RGF0aSBzdWkgZmx1c3NpIGFubnVhbGkgcGVyIHBhZXNlIGRpIG9yaWdpbmU8L2xpPlxuICAgIDwvdWw+XG4gIDwvZGl2PlxuPC9kaXY+YFxuIn1dfQ==
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../analisi";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>© 2025 GAPMED Insights. Tutti i diritti riservati.</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
