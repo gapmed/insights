@@ -756,6 +756,129 @@ html`<div class="callout-tip">
 
 ---
 
+## La distribuzione per settore lavorativo
+
+Non tutti i medici lavorano nel Servizio Sanitario Nazionale. Secondo i dati FNOMCEO del 2025, i medici attivi in Italia si distribuiscono tra diversi settori: SSN pubblico, strutture private accreditate (che operano per conto del SSN), privato puro e libera professione.
+
+Applicando le proporzioni FNOMCEO 2025 alle proiezioni dei medici attivi, è possibile stimare l'evoluzione della distribuzione per settore fino al 2040. L'analisi assume che le proporzioni restino costanti nel tempo — un'ipotesi semplificatrice che non considera possibili spostamenti tra settori dovuti a politiche sanitarie, attrattività relativa o trasformazioni del mercato.
+
+```{ojs}
+//| echo: false
+// Proporzioni FNOMCEO 2025 (escludendo medici all'estero)
+// Totale base: 287.655 medici in Italia
+// SSN: 209.631 (72.9%)
+// Privato accreditato: 18.290 (6.4%)
+// Privato puro: 19.146 (6.7%)
+// Liberi professionisti: 40.588 (14.1%)
+propSSN = 0.729
+propPrivatoAccreditato = 0.064
+propPrivatoPuro = 0.067
+propLiberiProfessionisti = 0.141
+```
+
+```{ojs}
+//| echo: false
+datiSettore = mediciAttivi.flatMap(d => [
+  {anno: d.anno, settore: "SSN pubblico", valore: Math.round(d.attivi * propSSN)},
+  {anno: d.anno, settore: "Privato accreditato", valore: Math.round(d.attivi * propPrivatoAccreditato)},
+  {anno: d.anno, settore: "Privato puro", valore: Math.round(d.attivi * propPrivatoPuro)},
+  {anno: d.anno, settore: "Liberi professionisti", valore: Math.round(d.attivi * propPrivatoAccreditato + d.attivi * propPrivatoPuro + d.attivi * propLiberiProfessionisti) - Math.round(d.attivi * propPrivatoAccreditato) - Math.round(d.attivi * propPrivatoPuro)}
+])
+```
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  title: "Distribuzione dei medici per settore lavorativo (2019-2040)",
+  width: width,
+  height: 450,
+  y: {label: "Medici attivi", grid: true, tickFormat: d => Math.round(d / 1000) + "k"},
+  x: {label: "Anno", tickFormat: d => String(d)},
+  color: {
+    legend: true,
+    domain: ["SSN pubblico", "Privato accreditato", "Privato puro", "Liberi professionisti"],
+    range: ["#3973b9", "#6c757d", "#f59e0b", "#e83977"]
+  },
+  marks: [
+    Plot.areaY(datiSettore, {x: "anno", y: "valore", fill: "settore", tip: true, order: ["SSN pubblico", "Privato accreditato", "Privato puro", "Liberi professionisti"]}),
+    Plot.ruleX([2025], {stroke: "#333", strokeWidth: 2, strokeDasharray: "4,4"})
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+settore2025 = {
+  return {
+    ssn: Math.round(att2025.attivi * propSSN),
+    accreditato: Math.round(att2025.attivi * propPrivatoAccreditato),
+    puro: Math.round(att2025.attivi * propPrivatoPuro),
+    liberi: Math.round(att2025.attivi * propLiberiProfessionisti)
+  }
+}
+
+settore2040 = {
+  return {
+    ssn: Math.round(att2040.attivi * propSSN),
+    accreditato: Math.round(att2040.attivi * propPrivatoAccreditato),
+    puro: Math.round(att2040.attivi * propPrivatoPuro),
+    liberi: Math.round(att2040.attivi * propLiberiProfessionisti)
+  }
+}
+
+crescitaSSN = ((settore2040.ssn - settore2025.ssn) / settore2025.ssn * 100).toFixed(1)
+```
+
+```{ojs}
+//| echo: false
+html`<div class="card-grid">
+  <div class="card">
+    <h3 style="color: #3973b9;">SSN pubblico</h3>
+    <p class="small">2025: ${fmt(settore2025.ssn)}</p>
+    <p class="small">2040: ${fmt(settore2040.ssn)}</p>
+    <p class="small muted">72.9% del totale</p>
+  </div>
+  <div class="card">
+    <h3 style="color: #6c757d;">Privato accreditato</h3>
+    <p class="small">2025: ${fmt(settore2025.accreditato)}</p>
+    <p class="small">2040: ${fmt(settore2040.accreditato)}</p>
+    <p class="small muted">6.4% del totale</p>
+  </div>
+  <div class="card">
+    <h3 style="color: #f59e0b;">Privato puro</h3>
+    <p class="small">2025: ${fmt(settore2025.puro)}</p>
+    <p class="small">2040: ${fmt(settore2040.puro)}</p>
+    <p class="small muted">6.7% del totale</p>
+  </div>
+  <div class="card">
+    <h3 style="color: #e83977;">Liberi professionisti</h3>
+    <p class="small">2025: ${fmt(settore2025.liberi)}</p>
+    <p class="small">2040: ${fmt(settore2040.liberi)}</p>
+    <p class="small muted">14.1% del totale</p>
+  </div>
+</div>`
+```
+
+```{ojs}
+//| echo: false
+html`<div class="callout-tip">
+  <strong>Cosa emerge:</strong> Proiettando le proporzioni FNOMCEO 2025 nel futuro, il SSN pubblico passerebbe da circa ${fmt(settore2025.ssn)} medici nel 2025 a ${fmt(settore2040.ssn)} nel 2040 (+${crescitaSSN}%). I liberi professionisti crescerebbero proporzionalmente, passando da ${fmt(settore2025.liberi)} a ${fmt(settore2040.liberi)}. Queste stime assumono proporzioni costanti: nella realtà, politiche retributive, condizioni di lavoro e trasformazioni del mercato sanitario potrebbero modificare significativamente la distribuzione tra settori.
+</div>`
+```
+
+::: {.callout-note}
+**Fonte e note metodologiche**: Le proporzioni per settore lavorativo sono estratte da un'analisi FNOMCEO del 2025 sulla distribuzione dei medici iscritti all'albo. I dati escludono i medici iscritti in Italia ma operanti all'estero.
+
+La classificazione per settore presenta alcune sovrapposizioni:
+
+- Il **privato accreditato** include i medici dipendenti di strutture private che erogano prestazioni per conto del SSN
+- Tra i **liberi professionisti**, tuttavia, una quota significativa opera comunque per strutture private convenzionate (ad esempio gran parte dei chirurghi libero-professionisti), mentre un'altra porzione lavora come consulente per il SSN
+
+Di conseguenza, il contributo effettivo al sistema sanitario pubblico è maggiore di quanto suggerisca la sola percentuale "SSN pubblico": una parte rilevante dell'attività dei liberi professionisti è comunque rivolta a pazienti del SSN, sia attraverso convenzioni con strutture accreditate sia tramite consulenze dirette.
+:::
+
+---
+
 ## Piramide demografica dei medici
 
 Per visualizzare in modo più dettagliato la trasformazione anagrafica della professione, il grafico seguente mostra la distribuzione dei medici per singolo anno di età. Spostando il cursore è possibile osservare come la "piramide" si modifica nel tempo: nel 2019 era concentrata nelle fasce più mature (in rosa), mentre progressivamente si sposta verso le età più giovani (in blu).
