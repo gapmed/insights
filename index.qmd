@@ -12,10 +12,16 @@ Con queste analisi vogliamo contribuire a colmare questo vuoto: offrire dati, mo
 
 Ogni analisi è documentata nella metodologia, i dati sono resi disponibili e le simulazioni sono replicabili. Perché crediamo che la trasparenza sia il primo passo per una sanità migliore.
 
-## Ultime analisi
+## Analisi
 
-**[Migrazione dei Medici](analisi/migrazione-medici-2025.qmd)**
+### Migrazione dei Medici
+
 Quanti medici italiani emigrano davvero ogni anno? Un'analisi dei flussi reali di emigrazione e immigrazione, per fare chiarezza sui numeri che circolano nel dibattito pubblico.
 
-**[Pletora Medica 2025](analisi/pletora-medica-2025.qmd)**
+[Leggi l'analisi completa](analisi/migrazione-medici-2025.qmd)
+
+### Pletora Medica 2025
+
 L'Italia avrà troppi medici? Simulazione dell'evoluzione del numero di medici dal 2019 al 2040, integrando formazione, pensionamenti e invecchiamento della popolazione.
+
+[Leggi l'analisi completa](analisi/pletora-medica-2025.qmd)

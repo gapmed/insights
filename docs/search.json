@@ -63,11 +63,11 @@
     "text": "GAPMED Insights è il repository pubblico delle analisi sul Sistema Sanitario Nazionale italiano a cura di GAPMED.\nIl SSN è un patrimonio collettivo: universale, solidale, costruito in decenni di scelte politiche e professionali. Ma è anche un sistema di straordinaria complessità — demografica, organizzativa, economica — dove si intrecciano formazione dei professionisti, distribuzione territoriale delle risorse, evoluzione dei bisogni di salute, vincoli di bilancio e trasformazioni tecnologiche.\nTroppo spesso il dibattito pubblico sulla sanità oscilla tra emergenze quotidiane e visioni ideologiche, senza lo spazio per un’analisi strutturata dei dati. Sono pochi gli strumenti accessibili per rispondere a domande fondamentali: quanti medici avremo tra dieci anni? Dove mancheranno? Come cambierà la domanda di cure con l’invecchiamento della popolazione?\nCon queste analisi vogliamo contribuire a colmare questo vuoto: offrire dati, modelli e visualizzazioni che permettano di osservare il sistema sanitario oltre le semplificazioni, comprenderne le dinamiche profonde e alimentare proposte di miglioramento fondate sui fatti.\nOgni analisi è documentata nella metodologia, i dati sono resi disponibili e le simulazioni sono replicabili. Perché crediamo che la trasparenza sia il primo passo per una sanità migliore."
   },
   {
-    "objectID": "index.html#ultime-analisi",
-    "href": "index.html#ultime-analisi",
+    "objectID": "index.html#analisi",
+    "href": "index.html#analisi",
     "title": "GAPMED Insights",
-    "section": "Ultime analisi",
-    "text": "Ultime analisi\nMigrazione dei Medici Quanti medici italiani emigrano davvero ogni anno? Un’analisi dei flussi reali di emigrazione e immigrazione, per fare chiarezza sui numeri che circolano nel dibattito pubblico.\nPletora Medica 2025 L’Italia avrà troppi medici? Simulazione dell’evoluzione del numero di medici dal 2019 al 2040, integrando formazione, pensionamenti e invecchiamento della popolazione."
+    "section": "Analisi",
+    "text": "Analisi\n\nMigrazione dei Medici\nQuanti medici italiani emigrano davvero ogni anno? Un’analisi dei flussi reali di emigrazione e immigrazione, per fare chiarezza sui numeri che circolano nel dibattito pubblico.\nLeggi l’analisi completa\n\n\nPletora Medica 2025\nL’Italia avrà troppi medici? Simulazione dell’evoluzione del numero di medici dal 2019 al 2040, integrando formazione, pensionamenti e invecchiamento della popolazione.\nLeggi l’analisi completa"
   },
   {
     "objectID": "analisi/pletora-medica-2025.html",

@@ -30,6 +30,10 @@ echo ">> Copying docs folder..."
 rm -rf ./docs
 docker cp $CONTAINER_NAME:/app/docs ./docs
 
+# Copia CNAME per GitHub Pages
+echo ">> Copying CNAME for GitHub Pages..."
+cp ./CNAME ./docs/CNAME
+
 # Pulizia container
 docker rm -f $CONTAINER_NAME
 
