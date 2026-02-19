@@ -21,3 +21,5 @@ format:
     page-layout: full
     grid:
       body-width: 1200px
+    include-in-header: includes/gtm-head.html
+    include-before-body: includes/gtm-body.html
